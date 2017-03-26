@@ -25,8 +25,7 @@
     <bean id="jsonConverter"
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
 
-    <bean
-            class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
         <property name="messageConverters">
             <list>
                 <ref bean="stringConverter"/>
@@ -34,6 +33,7 @@
             </list>
         </property>
     </bean>
+
     <!--定义Controller扫描包,用户扫描Controller并创建代理对象 -->
     <context:component-scan base-package="com.mysportscenter.controller"/>
 </beans>
