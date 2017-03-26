@@ -11,7 +11,29 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd ">
     <!--springmvc驱动扫描包  -->
     <!--<mvc:annotation-driven />-->
-    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+    <!--  json配置 -->
+    <!-- 用于将对象转换为 JSON  -->
+    <bean id="stringConverter"
+          class="org.springframework.http.converter.StringHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="jsonConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+
+    <bean
+            class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="stringConverter"/>
+                <ref bean="jsonConverter"/>
+            </list>
+        </property>
+    </bean>
     <!--定义Controller扫描包,用户扫描Controller并创建代理对象 -->
     <context:component-scan base-package="com.mysportscenter.controller"/>
 </beans>

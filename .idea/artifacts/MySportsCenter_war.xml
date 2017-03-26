@@ -3,11 +3,6 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <root id="archive" name="MySportsCenter.war">
       <element id="artifact" artifact-name="MySportsCenter:war exploded" />
-      <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
-        </element>
-      </element>
     </root>
   </artifact>
 </component>
