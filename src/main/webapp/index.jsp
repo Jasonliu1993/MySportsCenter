@@ -5,96 +5,7 @@
     <meta charset="utf-8"/>
     <title>My Sports Center</title>
     <link rel="stylesheet" href="css/common-core.css">
-    <style>
-        .content .contentrootul {
-            width: 1000px;
-            height: 1823px;
-            margin: 0 auto;
-            border: 1px solid #49494a;
-            box-sizing: border-box;
-            background-color: #d5d5d5;
-        }
-
-        .content .contentrootul li {
-            list-style: none;
-        }
-
-        .content .contentrootul .picgallery {
-            padding-top: 10px;
-            width: 1000px;
-            height: 300px;
-            margin: 0 auto;
-            list-style: none;
-            margin-bottom: 10px;
-        }
-
-        .content .contentrootul .picgallery .picdetailul {
-            width: 1000px;
-            height: 300px;
-            margin: 0 auto;
-            list-style: none;
-            overflow: hidden;
-        }
-
-        .content .contentrootul .picgallery .picdetailul li {
-            width: 200px;
-            height: 300px;
-            display: inline-block;
-            float: left;
-            transition-property: width;
-            transition-duration: 1s;
-        }
-
-        .content .contentrootul .picgallery .picdetailul:hover li {
-            width: 150px;
-        }
-
-        .content .contentrootul .picgallery .picdetailul li:hover {
-            width: 400px;
-        }
-
-        .content .contentrootul .picgallery .picdetailul img {
-            width: 400px;
-            height: 300px;
-        }
-
-        .content .contentrootul .teamdetaillist {
-            width: 1000px;
-            height: 250px;
-            margin: 0 auto;
-        }
-        .content .contentrootul:hover .teamdetaillist {
-            opacity: 0.5;
-        }
-        .content .contentrootul .teamdetaillist:hover {
-            opacity: 1;
-        }
-        .content .contentrootul .teamdetaillist .teamdetail{
-            width: 1000px;
-            height: 250px;
-            border: 1px solid #4e4e4e;
-            margin: 0 auto;
-        }
-        .content .contentrootul .teamdetaillist .teamdetail .teamlogo{
-            width: 300px;
-            height: 250px;
-            float: left;
-            display: inline-block;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .content .contentrootul .teamdetaillist .teamdetail .teamlogo img{
-            height: 100px;
-            width: 100px;
-            padding-top: 50px;
-        }
-        .content .contentrootul .teamdetaillist .teamdetail .teamnews{
-            width: 680px;
-            height: 250px;
-            float: right;
-            display: inline-block;
-        }
-    </style>
+    <link rel="stylesheet" href="css/mainpage/index.css">
     <script src="js/jquery-3.1.1.min.js"></script>
     <script>
 
@@ -129,7 +40,26 @@
                 <span class="teamlogo">
                     <img src="images/teamicon/br.png" alt="拜仁">
                 </span>
-                <span class="teamnews"></span>
+                <span class="teamnews">
+                    <span>
+                        <ul>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                        </ul>
+                    </span>
+                    <span>
+                        <ul>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                            <li><a href="#">This is a news for Bayern.</a></li>
+                        </ul>
+                    </span>
+                </span>
             </div>
         </li>
         <li class="teamdetaillist">
