@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mysportscenter.dao.TeamInformationDao">
+    <select id="selectAll" resultType="com.mysportscenter.javabeans.TeamInformation">
+        SELECT * FROM TEAMINFORMATION ORDER BY RANKING
+    </select>
+    <select id="getTeamLogo" parameterType="String" resultType="String">
+        SELECT TEAM_LOGO_PATH FROM TEAMINFORMATION WHERE ID = #{id}
+    </select>
+</mapper>

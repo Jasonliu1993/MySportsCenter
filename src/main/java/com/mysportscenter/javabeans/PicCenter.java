@@ -103,4 +103,21 @@ public class PicCenter {
     public void setCustom5(String custom5) {
         this.custom5 = custom5;
     }
+
+    @Override
+    public String toString() {
+        return "PicCenter{" +
+                "id='" + id + '\'' +
+                ", version=" + version +
+                ", picPath='" + picPath + '\'' +
+                ", refKeyForTeam='" + refKeyForTeam + '\'' +
+                ", refKeyForPerson='" + refKeyForPerson + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", custom1='" + custom1 + '\'' +
+                ", custom2='" + custom2 + '\'' +
+                ", custom3='" + custom3 + '\'' +
+                ", custom4='" + custom4 + '\'' +
+                ", custom5='" + custom5 + '\'' +
+                '}';
+    }
 }

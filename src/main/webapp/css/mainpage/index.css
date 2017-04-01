@@ -56,13 +56,13 @@
     margin: 0 auto;
 }
 
-.content .contentrootul:hover .teamdetaillist {
+/*.content .contentrootul:hover .teamdetaillist {
     opacity: 0.5;
 }
 
 .content .contentrootul .teamdetaillist:hover {
     opacity: 1;
-}
+}*/
 
 .content .contentrootul .teamdetaillist .teamdetail {
     width: 1000px;

@@ -1,12 +1,14 @@
 package com.mysportscenter.dao;
 
 import com.mysportscenter.javabeans.PicCenter;
+import org.springframework.stereotype.Component;
 
-import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Jason on 3/30/17.
  */
+@Component
 public interface PicCenterDao {
-    public LinkedList<PicCenter> selectTop5Pic ();
+    List<PicCenter> selectTop5Pic ();
 }

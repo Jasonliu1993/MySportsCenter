@@ -17,6 +17,16 @@ public class TeamNews {
     private String custom4;
     private String custom5;
 
+    private String teamLogoPath;
+
+    public String getTeamLogoPath() {
+        return teamLogoPath;
+    }
+
+    public void setTeamLogoPath(String teamLogoPath) {
+        this.teamLogoPath = teamLogoPath;
+    }
+
     public String getId() {
         return id;
     }
@@ -111,5 +121,24 @@ public class TeamNews {
 
     public void setCustom5(String custom5) {
         this.custom5 = custom5;
+    }
+
+    @Override
+    public String toString() {
+        return "TeamNews{" +
+                "id='" + id + '\'' +
+                ", version=" + version +
+                ", newsTitle='" + newsTitle + '\'' +
+                ", newsContent='" + newsContent + '\'' +
+                ", refKeyForTeam='" + refKeyForTeam + '\'' +
+                ", refKeyForPerson='" + refKeyForPerson + '\'' +
+                ", updateTime='" + updateTime + '\'' +
+                ", custom1='" + custom1 + '\'' +
+                ", custom2='" + custom2 + '\'' +
+                ", custom3='" + custom3 + '\'' +
+                ", custom4='" + custom4 + '\'' +
+                ", custom5='" + custom5 + '\'' +
+                ", teamLogoPath='" + teamLogoPath + '\'' +
+                '}';
     }
 }
