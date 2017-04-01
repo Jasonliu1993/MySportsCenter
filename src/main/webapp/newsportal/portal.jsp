@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="../css/mainpage/index.css">
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
-
+        $(document).ready(function(){
+            $("li:contains('首页')").css("background-color","#abe3e5");
+        });
     </script>
 </head>
 <body>
@@ -17,12 +19,12 @@
 <div class="fixed"></div>
 <div class="header">
     <ul>
-        <li>首页</li>
-        <li>新闻</li>
-        <li>图片</li>
-        <li>视频</li>
-        <li>球队</li>
-        <li>论坛</li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">图片</a></li>
+        <li><a href="#">视频</a></li>
+        <li><a href="/teamRanking.do">球队</a></li>
+        <li><a href="#">论坛</a></li>
     </ul>
 </div>
 <div class="content">

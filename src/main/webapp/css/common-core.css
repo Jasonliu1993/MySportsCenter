@@ -41,6 +41,10 @@ body{
     background-color: #f02136;
     float: left;
 }
+.header ul li a{
+    text-decoration: none;
+    color: #4f4f4f;
+}
 .header ul li:hover{
     background-color: #abe3e5;
 }
