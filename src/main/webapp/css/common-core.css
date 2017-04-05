@@ -5,6 +5,16 @@
 body{
     background: url("../images/programpic/mainbgp.jpg");
 }
+a{
+    text-decoration: none;
+    color: #4d4d4d;
+}
+a:hover{
+    color: #ca0022;
+}
+a:visited{
+    color: #ca0022;
+}
 .fixedmenu{
     width: 100%;
     height: 30px;
