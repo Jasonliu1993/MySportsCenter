@@ -18,4 +18,7 @@ public class TeamRankingListService {
     public List<TeamInformation> getAllTeamInformation() {
         return teamInformationDao.selectAll();
     }
+    public int getTeamCount(){
+        return teamInformationDao.getTeamCount();
+    }
 }

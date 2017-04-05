@@ -12,4 +12,5 @@ import java.util.List;
 public interface TeamInformationDao {
     List<TeamInformation> selectAll ();
     String getTeamLogo (String ID);
+    int getTeamCount();
 }

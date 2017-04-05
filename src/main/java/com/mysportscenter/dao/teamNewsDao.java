@@ -11,4 +11,5 @@ import java.util.List;
 @Component
 public interface TeamNewsDao {
     List<TeamNews> selectTop6TeamNewsAndLogoPath ();
+    List<TeamNews> selectAllTeamNewsAndLogoPathTop5ById (String id);
 }

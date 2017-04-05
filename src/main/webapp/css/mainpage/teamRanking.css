@@ -1,0 +1,49 @@
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #49494a;
+    box-sizing: border-box;
+    background-color: #d5d5d5;
+    overflow: hidden;
+}
+
+.content table {
+    width: 1000px;
+    margin: 20px auto;
+    border: 1px solid black;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.content table caption {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.content table tr {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    border: 1px solid black;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content table tr, td {
+    width: 125px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.content table td img {
+    width: 60px;
+    height: 50px;
+}
+
+.content table td a {
+    text-decoration: none;
+}

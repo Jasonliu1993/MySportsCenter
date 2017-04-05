@@ -21,4 +21,9 @@ ORDER BY A.RANKING, B.UPDATE_TIME DESC LIMIT 0, 60
         <result column="custom4" property="custom4" />
         <result column="team_logo_path" property="teamLogoPath" />
     </resultMap>
+    <select id="selectAllTeamNewsAndLogoPathTop5ById" parameterType="String" resultMap="TeamNewsAndLogo">
+        SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
+        WHERE ID = #{id}
+        ORDER BY B.UPDATE_TIME DESC LIMIT 0, 5
+    </select>
 </mapper>

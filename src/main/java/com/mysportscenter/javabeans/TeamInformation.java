@@ -8,6 +8,7 @@ public class TeamInformation {
     private int version;
     private String teamName;
     private String round;
+    private String ranking;
     private String winsCount;
     private String drawCount;
     private String loseCount;
@@ -19,6 +20,14 @@ public class TeamInformation {
     private String custom3;
     private String custom4;
     private String custom5;
+
+    public String getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(String ranking) {
+        this.ranking = ranking;
+    }
 
     public String getId() {
         return id;

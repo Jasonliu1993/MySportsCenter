@@ -48,15 +48,6 @@ body{
 .header ul li:hover{
     background-color: #abe3e5;
 }
-.content {
-    width: 1000px;
-    height: 1823px;
-    margin: 0 auto;
-    border: 1px solid #49494a;
-    box-sizing: border-box;
-    background-color: #d5d5d5;
-    overflow: hidden;
-}
 .footer{
     width: 1000px;
     height: 40px;

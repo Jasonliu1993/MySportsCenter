@@ -17,6 +17,7 @@ public class TeamRankingListController {
     @RequestMapping("/teamRanking.do")
     public String teamRankingList (ModelMap modelMap) {
         modelMap.addAttribute("teamRankingInfo",teamRankingListService.getAllTeamInformation());
-        return "/newsportal/teamRankingList.jsp";
+        modelMap.addAttribute("teamCount",teamRankingListService.getAllTeamInformation().size());
+        return "/newsportal/teamRanking.jsp";
     }
 }

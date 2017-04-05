@@ -9,4 +9,7 @@
     <select id="getTeamLogo" parameterType="String" resultType="String">
         SELECT TEAM_LOGO_PATH FROM TEAMINFORMATION WHERE ID = #{id}
     </select>
+    <select id="getTeamCount" resultType="int">
+        SELECT COUNT(*) FROM TEAMINFORMATION
+    </select>
 </mapper>
