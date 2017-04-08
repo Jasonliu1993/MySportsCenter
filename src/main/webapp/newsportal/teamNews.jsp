@@ -5,6 +5,7 @@
   Time: 16:09
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -37,6 +38,7 @@
         .content .mainNewsList .mainNewsContent .teamNameFirst{
             width: 450px;
             height: 30px;
+            margin: 0 auto;
             border-bottom: 1px solid #4d4d4d;
             border-left: 3px solid #4d4d4d;
             -webkit-box-sizing: border-box;
@@ -83,61 +85,17 @@
 <%@include file="../common-page/page-header.jsp" %>
 <div class="content">
     <ul class="mainNewsList">
-        <li class="mainNewsContent">
-            <div class="teamNameFirst">
-                <span class="teamName">拜仁</span>
-                <span class="moreTeamNews"><a href="#">+更多</a></span>
-            </div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-        </li>
-        <li class="mainNewsContent">
-            <div class="teamNameFirst">
-                <span class="teamName">勒沃库森</span>
-                <span class="moreTeamName"><a href="#">+更多</a></span>
-            </div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-        </li>
-        <li class="mainNewsContent">
-            <div class="teamNameFirst">
-                <span class="teamName">不莱梅</span>
-                <span class="moreTeamName"><a href="#">+更多</a></span>
-            </div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-        </li>
-        <li class="mainNewsContent">
-            <div class="teamNameFirst">
-                <span class="teamName">柏林赫塔</span>
-                <span class="moreTeamName"><a href="#">+更多</a></span>
-            </div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-        </li>
-        <li class="mainNewsContent">
-            <div class="teamNameFirst">
-                <span class="teamName">门兴</span>
-                <span class="moreTeamName"><a href="#">+更多</a></span>
-            </div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-            <div class="teamNewsTitle"><a href="#">This is dummy news</a></div>
-        </li>
+        <c:forEach items="${newsListByTeamName}" varStatus="i" var="newsList" >
+            <li class="mainNewsContent">
+                <div class="teamNameFirst">
+                    <span class="teamName">${newsList.key}</span>
+                    <span class="moreTeamNews"><a href="/teamNewsMore.do?Tid=${newsList.value[1].refKeyForTeam}">+更多</a></span>
+                </div>
+                <c:forEach items="${newsList.value}" varStatus="k" var="newsDetail">
+                <div class="teamNewsTitle"><a href="/teamNewsDetail.do?TNid=${newsDetail.id}">${newsDetail.newsTitle}</a></div>
+                </c:forEach>
+            </li>
+        </c:forEach>
     </ul>
 </div>
 <%@include file="../common-page/page-footer.jsp" %>

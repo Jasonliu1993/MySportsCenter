@@ -40,8 +40,8 @@
                             <span>
                                 <ul>
                                     <c:forEach items="${mainNews}" varStatus="i" var="mainNewsItem">
-                                        <c:if test="${(i.index + 1) >= (k * 10 - 9) || (i.index + 1) <= (k * 10) || (i.index + 1) % 2 == 0}">
-                                            <li><a href="#">${mainNewsItem.getNewsTitle()}</a></li>
+                                        <c:if test="${(i.index + 1) >= (k * 10 - 9) && (i.index + 1) <= (k * 10) && (i.index + 1) % 2 == 0}">
+                                            <li><a href="/teamNewsDetail.do?TNid=${mainNewsItem.id}">${mainNewsItem.getNewsTitle()}</a></li>
                                         </c:if>
                                     </c:forEach>
                                 </ul>
@@ -50,8 +50,8 @@
                             <span>
                                 <ul>
                                     <c:forEach items="${mainNews}" varStatus="i" var="mainNewsItem">
-                                        <c:if test="${(i.index + 1) >= (k * 10 - 9) || (i.index + 1) <= (k * 10) || (i.index + 1) % 2 == 1}">
-                                            <li><a href="#">${mainNewsItem.getNewsTitle()}</a></li>
+                                        <c:if test="${(i.index + 1) >= (k * 10 - 9) && (i.index + 1) <= (k * 10) && (i.index + 1) % 2 == 1}">
+                                            <li><a href="/teamNewsDetail.do?TNid=${mainNewsItem.id}">${mainNewsItem.getNewsTitle()}</a></li>
                                         </c:if>
                                     </c:forEach>
                                 </ul>
