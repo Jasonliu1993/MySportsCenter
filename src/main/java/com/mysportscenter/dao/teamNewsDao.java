@@ -12,4 +12,6 @@ import java.util.List;
 public interface TeamNewsDao {
     List<TeamNews> selectTop6TeamNewsAndLogoPath ();
     List<TeamNews> selectAllTeamNewsAndLogoPathTop5ById (String id);
+    TeamNews selectTeamNewsById (String id );
+    List<TeamNews> selectTeamNewsByTeamId (String id );
 }

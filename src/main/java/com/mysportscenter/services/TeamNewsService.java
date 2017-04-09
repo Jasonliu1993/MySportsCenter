@@ -32,8 +32,12 @@ public class TeamNewsService {
     }
 
     public TeamNews getTeamNewsById(String id) {
-        TeamNews teamNews = new TeamNews();
-        teamNews = teamNewsDao.selectTeamNewsById(id);
+        TeamNews teamNews = teamNewsDao.selectTeamNewsById(id);
         return teamNews;
+    }
+
+    public List<TeamNews> getTeamNewsByTeamId(String id) {
+        List<TeamNews> teamNewses = teamNewsDao.selectTeamNewsByTeamId(id);
+        return teamNewses;
     }
 }

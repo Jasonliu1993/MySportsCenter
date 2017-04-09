@@ -12,4 +12,7 @@
     <select id="getTeamCount" resultType="int">
         SELECT COUNT(*) FROM TEAMINFORMATION
     </select>
+    <select id="getTeamName" parameterType="String" resultType="String">
+        SELECT TEAM_NAME FROM TEAMINFORMATION WHERE ID = #{id}
+    </select>
 </mapper>

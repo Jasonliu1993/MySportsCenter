@@ -1,0 +1,74 @@
+.content .teamTitle {
+    width: 100%;
+    height: 30px;
+    margin: 10px auto;
+    line-height: 30px;
+    text-align: center;
+}
+
+.content .teamNewsFullList {
+    width: 100%;
+    margin: 10px auto;
+}
+
+.content .teamNewsFullList {
+    width: 100%;
+    height: 1000px;
+}
+
+.content .teamNewsFullList li {
+    width: 100%;
+    text-align: center;
+}
+
+.content .teamNewsFullList .newsTitle {
+    height: 40px;
+}
+
+.content .teamNewsFullList .newsContentList {
+    margin-top: 10px;
+    height: 20px;
+    display: list-item;
+}
+
+.content .teamNewsFullList li .newsTitleName {
+    width: 80%;
+    text-align: center;
+    float: left;
+    display: inline-block;
+}
+
+.content .teamNewsFullList .newsTitle .newsTitleName {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.content .teamNewsFullList .newsContentList .newsTitleName {
+    height: 20px;
+    line-height: 20px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.content .teamNewsFullList li .newsUpdateTime {
+    width: 19%;
+    text-align: center;
+    float: right;
+    display: inline-block;
+    border-left: 2px solid #4d4d4d;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.content .teamNewsFullList .newsTitle .newsUpdateTime {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.content .teamNewsFullList .newsContentList .newsUpdateTime {
+    height: 20px;
+    line-height: 20px;
+}

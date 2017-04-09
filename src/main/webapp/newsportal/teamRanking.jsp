@@ -10,7 +10,7 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("li:contains('球队')").css("background-color", "#abe3e5");
+            $("li[name='Navi5']").css("background-color", "#abe3e5");
             <%--$(".content").css("height", "(${teamCount} *50) px;");--%>
         });
     </script>

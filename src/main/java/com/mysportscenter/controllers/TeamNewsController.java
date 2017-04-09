@@ -1,6 +1,7 @@
 package com.mysportscenter.controllers;
 
 import com.mysportscenter.javabeans.TeamNews;
+import com.mysportscenter.services.TeamInformationService;
 import com.mysportscenter.services.TeamNewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,6 +18,8 @@ import java.util.List;
 public class TeamNewsController {
     @Resource
     TeamNewsService teamNewsService;
+    @Resource
+    TeamInformationService teamInformationService;
 
     @RequestMapping("/teamNews.do")
     public String teamNewsList(ModelMap modelMap) {
@@ -34,7 +37,8 @@ public class TeamNewsController {
     @RequestMapping("/teamNewsMore.do")
     public String teamNewsDetailMore(@RequestParam("Tid") String id, ModelMap modelMap) {
         System.out.println(id);
-        modelMap.addAttribute("msg", "你好!");
+        modelMap.addAttribute("teamName", teamInformationService.getTeamName(id));
+        modelMap.addAttribute("newsList", teamNewsService.getTeamNewsByTeamId(id));
         return "/newsportal/teamNewsMore.jsp";
     }
 }

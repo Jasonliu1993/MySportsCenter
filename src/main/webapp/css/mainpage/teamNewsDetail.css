@@ -1,0 +1,14 @@
+
+.content .newsTitle {
+    width: 100%;
+    margin: 10px auto;
+}
+.content .newsTitle h2{
+    text-align: center;
+}
+.content .newsContent {
+    width: 90%;
+    height: 500px;
+    margin: 10px auto;
+    word-wrap: break-word;
+}

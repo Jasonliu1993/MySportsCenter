@@ -30,4 +30,8 @@ ORDER BY A.RANKING, B.UPDATE_TIME DESC LIMIT 0, 60
         SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
         WHERE B.ID = #{id}
     </select>
+    <select id="selectTeamNewsByTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamNews">
+        SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
+        WHERE A.ID = #{id}
+    </select>
 </mapper>

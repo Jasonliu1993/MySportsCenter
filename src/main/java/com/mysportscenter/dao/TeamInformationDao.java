@@ -13,4 +13,5 @@ public interface TeamInformationDao {
     List<TeamInformation> selectAll ();
     String getTeamLogo (String ID);
     int getTeamCount();
+    String getTeamName(String id);
 }

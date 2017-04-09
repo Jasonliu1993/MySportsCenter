@@ -10,7 +10,7 @@
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("li:contains('首页')").css("background-color","#abe3e5");
+            $("li[name='Navi1']").css("background-color","#abe3e5");
         });
     </script>
 </head>
