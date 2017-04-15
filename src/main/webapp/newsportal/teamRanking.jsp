@@ -35,7 +35,7 @@
             <tr>
                 <td>${teamItem.ranking}</td>
                 <td><img src="${teamItem.teamLogoPath}" /></td>
-                <td><a href="#">${teamItem.teamName}</a></td>
+                <td><a href="/teamInformation.do?id=${teamItem.id}">${teamItem.teamName}</a></td>
                 <td>${teamItem.round}</td>
                 <td>${teamItem.winsCount}</td>
                 <td>${teamItem.drawCount}</td>
