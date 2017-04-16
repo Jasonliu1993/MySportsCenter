@@ -1,11 +1,10 @@
 package com.mysportscenter.services;
 
 import com.mysportscenter.dao.TeamInformationDao;
-import com.sun.javafx.collections.MappingChange;
+import com.mysportscenter.javabeans.TeamInformation;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.Map;
 
 /**
  * Created by Jason on 4/9/17.
@@ -17,5 +16,9 @@ public class TeamInformationService {
 
     public String getTeamName(String id) {
         return teamInformationDao.getTeamName(id);
+    }
+
+    public TeamInformation getTeamInformationById(String id) {
+        return teamInformationDao.getTeamInformationById(id);
     }
 }

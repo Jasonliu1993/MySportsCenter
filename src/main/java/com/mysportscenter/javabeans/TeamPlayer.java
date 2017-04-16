@@ -7,7 +7,7 @@ public class TeamPlayer {
     private String id;
     private int version;
     private String playerName;
-    private String playNumber;
+    private String playerNumber;
     private String playerLocationInTeam;
     private String assist;
     private String goal;
@@ -43,12 +43,12 @@ public class TeamPlayer {
         this.playerName = playerName;
     }
 
-    public String getPlayNumber() {
-        return playNumber;
+    public String getPlayerNumber() {
+        return playerNumber;
     }
 
-    public void setPlayNumber(String playNumber) {
-        this.playNumber = playNumber;
+    public void setPlayerNumber(String playNumber) {
+        this.playerNumber = playNumber;
     }
 
     public String getPlayerLocationInTeam() {
@@ -137,7 +137,7 @@ public class TeamPlayer {
                 "id='" + id + '\'' +
                 ", version=" + version +
                 ", playerName='" + playerName + '\'' +
-                ", playNumber='" + playNumber + '\'' +
+                ", playNumber='" + playerNumber + '\'' +
                 ", playerLocationInTeam='" + playerLocationInTeam + '\'' +
                 ", assist='" + assist + '\'' +
                 ", goal='" + goal + '\'' +

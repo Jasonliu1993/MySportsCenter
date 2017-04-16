@@ -20,10 +20,10 @@ public class TeamPlayerService {
         return teamPlayerDao.getTeamPlayerByTeamId(id);
     }
 
-    public HashMap<String,Long> getTeamPlayerLocationCountByTeamId(String id) {
-        HashMap<String,Long> returnHashMap = new HashMap<String, Long>();
+    public HashMap<String,Integer> getTeamPlayerLocationCountByTeamId(String id) {
+        HashMap<String,Integer> returnHashMap = new HashMap<String, Integer>();
         for (HashMap<String,Object> hashMap : teamPlayerDao.getTeamPlayerLocationCountByTeamId(id)) {
-            returnHashMap.put(hashMap.get("location").toString(),Long.parseLong(hashMap.get("cou").toString()));
+            returnHashMap.put(hashMap.get("location").toString(),(((Integer.parseInt(hashMap.get("cou").toString()) - 1) / 4 + 1) * 100));
         }
         return returnHashMap;
     }

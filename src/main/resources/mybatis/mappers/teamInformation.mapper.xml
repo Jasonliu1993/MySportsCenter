@@ -15,4 +15,7 @@
     <select id="getTeamName" parameterType="String" resultType="String">
         SELECT TEAM_NAME FROM TEAMINFORMATION WHERE ID = #{id}
     </select>
+    <select id="getTeamInformationById" parameterType="String" resultType="com.mysportscenter.javabeans.TeamInformation">
+        SELECT * FROM TEAMINFORMATION WHERE ID = #{id}
+    </select>
 </mapper>

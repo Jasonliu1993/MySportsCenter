@@ -11,255 +11,7 @@
 <head>
     <title>My Sprots Center</title>
     <link rel="stylesheet" href="/css/common-core.css">
-    <%--<link rel="stylesheet" href="/css/mainpage/teamNewsDetail.css">--%>
-    <style>
-        .content .teamTitle {
-            width: 1000px;
-            height: 130px;
-            text-align: center;
-            font-weight: bold;
-            margin: 10px auto;
-        }
-
-        .content .teamTitle .teamIcon {
-            width: 300px;
-            height: 130px;
-            text-align: center;
-            float: left;
-            display: inline-block;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .teamTitle .teamIcon img {
-            width: 130px;
-            height: 130px;
-            text-align: center;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .teamTitle .teamInfo {
-            width: 700px;
-            height: 130px;
-            display: inline-block;
-            float: right;
-            text-align: left;
-            font-weight: bold;
-            margin: 10px auto;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .listButton {
-            width: 1000px;
-            height: 40px;
-            margin: 10px auto;
-        }
-
-        .content .listButton .buttonList {
-            width: 1000px;
-            height: 40px;
-        }
-
-        .content .listButton .buttonList li {
-            float: left;
-            border: 1px solid #49494a;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            cursor: pointer;
-        }
-
-        .content .listButton .buttonList .list1 {
-            width: 500px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-        }
-
-        .content .listButton .buttonList .list2 {
-            width: 500px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-        }
-
-        .content .coreContent .teamPlayer {
-            width: 1000px;
-            text-align: center;
-            margin: 10px auto;
-        }
-
-        .content .coreContent .teamPlayer div ul .playerList {
-            width: 100px;
-            height: 100px;
-            margin-left: 84px;
-            float: left;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer div ul .playerList .playerNumber {
-            width: 61px;
-            height: 61px;
-            line-height: 60px;
-            background: url("/images/programpic/tubiao.png");
-            background-position: -230px, -8px;
-            text-align: center;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer div ul .playerList .playerName {
-            width: 61px;
-            height: 39px;
-            line-height: 40px;
-            text-align: left;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .forward {
-            width: 1000px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            margin: 10px auto;
-            padding-top: 40px;
-        }
-
-        .content .coreContent .teamPlayer .forwardTitle {
-            width: 198px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: left;
-            border-right: 1px solid #4f4f4f;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .forwardContent {
-            width: 800px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: right;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .midfielder {
-            width: 1000px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            margin: 10px auto;
-        }
-
-        .content .coreContent .teamPlayer .midfielderTitle {
-            width: 198px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: left;
-            border-right: 1px solid #4f4f4f;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .midfielderContent {
-            width: 800px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: right;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .back {
-            width: 1000px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            margin: 10px auto;
-        }
-
-        .content .coreContent .teamPlayer .backTitle {
-            width: 198px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: left;
-            border-right: 1px solid #4f4f4f;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .backContent {
-            width: 800px;
-            height: 200px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: right;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .goalkeeper {
-            width: 1000px;
-            height: 100px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            margin: 10px auto;
-        }
-
-        .content .coreContent .teamPlayer .goalkeeperTitle {
-            width: 198px;
-            height: 100px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: left;
-            border-right: 1px solid #4f4f4f;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamPlayer .goalkeeperContent {
-            width: 800px;
-            height: 100px; /*每个球员h100px,w100px,此处是动态值,是100的倍数*/
-            float: right;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamVersus {
-            width: 1000px;
-            text-align: center;
-            margin: 10px auto;
-        }
-
-        .content .coreContent .teamVersus .versusTitle {
-            width: 1000px;
-            text-align: left;
-            margin-top: 50px;
-            margin-left: 50px;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-
-        .content .coreContent .teamVersus .versusContent {
-            width: 1000px;
-            margin: 30px auto;
-        }
-
-        .content .coreContent .teamVersus .versusContent table {
-            width: 1000px;
-            text-align: center;
-        }
-
-        .content .coreContent .teamVersus .versusContent table tr td {
-            width: 250px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/mainpage/teamInformation.css">
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -267,21 +19,22 @@
             $("li[class='list1']").css("background-color", "#abe3e5");
             $("div[class='teamPlayer']").css("display", "block");
             $("div[class='teamVersus']").css("display", "none");
-            $("div[class='goalkeeper']").css("height", "100px");
-            $("div[class='goalkeeperTitle']").css("height", "100px");
-            $("div[class='goalkeeperContent']").css("height", "100px");
 
-            $("div[class='back']").css("height", "200px");
-            $("div[class='backTitle']").css("height", "200px");
-            $("div[class='backContent']").css("height", "200px");
+            $("div[class='goalkeeper']").css("height", "${locationCount['Goalkeeper']}px");
+            $("div[class='goalkeeperTitle']").css("height", "${locationCount['Goalkeeper']}px");
+            $("div[class='goalkeeperContent']").css("height", "${locationCount['Goalkeeper']}px");
 
-            $("div[class='midfielder']").css("height", "200px");
-            $("div[class='midfielderTitle']").css("height", "200px");
-            $("div[class='midfielderContent']").css("height", "200px");
+            $("div[class='back']").css("height", "${locationCount['Back']}px");
+            $("div[class='backTitle']").css("height", "${locationCount['Back']}px");
+            $("div[class='backContent']").css("height", "${locationCount['Back']}px");
 
-            $("div[class='forward']").css("height", "200px");
-            $("div[class='forwardTitle']").css("height", "200px");
-            $("div[class='forwardContent']").css("height", "200px");
+            $("div[class='midfielder']").css("height", "${locationCount['Midfielder']}px");
+            $("div[class='midfielderTitle']").css("height", "${locationCount['Midfielder']}px");
+            $("div[class='midfielderContent']").css("height", "${locationCount['Midfielder']}px");
+
+            $("div[class='forward']").css("height", "${locationCount['Forward']}px");
+            $("div[class='forwardTitle']").css("height", "${locationCount['Forward']}px");
+            $("div[class='forwardContent']").css("height", "${locationCount['Forward']}px");
         });
 
         $(document).ready(function () {
@@ -301,10 +54,10 @@
 <%@include file="../common-page/page-header.jsp" %>
 <div class="content">
     <div class="teamTitle">
-        <span class="teamIcon"><img src="/images/teamicon/br.png" alt="br"></span>
+        <span class="teamIcon"><img src="${teamInformation.teamLogoPath}" alt="br"></span>
         <span class="teamInfo">
-            <h2>拜仁慕尼黑</h2>
-            <p>排名:1</p>
+            <h2>${teamInformation.teamName}</h2>
+            <p>排名:${teamInformation.ranking}</p>
         </span>
     </div>
     <div class="listButton">
@@ -321,30 +74,14 @@
                 </div>
                 <div class="forwardContent">
                     <ul class="forwardPlayerList">
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
+                        <c:forEach items="${teamPlayer}" varStatus="i" var="items">
+                            <c:if test="${items.playerLocationInTeam == 'Forward'}">
+                                <li class="playerList">
+                                    <div class="playerNumber">${items.playerNumber}</div>
+                                    <div class="playerName">${items.playerName}</div>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -354,30 +91,14 @@
                 </div>
                 <div class="midfielderContent">
                     <ul class="midfielderPlayerList">
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
+                        <c:forEach items="${teamPlayer}" varStatus="i" var="items">
+                            <c:if test="${items.playerLocationInTeam == 'Midfielder'}">
+                                <li class="playerList">
+                                    <div class="playerNumber">${items.playerNumber}</div>
+                                    <div class="playerName">${items.playerName}</div>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -387,30 +108,14 @@
                 </div>
                 <div class="backContent">
                     <ul class="backPlayerList">
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
+                        <c:forEach items="${teamPlayer}" varStatus="i" var="items">
+                            <c:if test="${items.playerLocationInTeam == 'Back'}">
+                                <li class="playerList">
+                                    <div class="playerNumber">${items.playerNumber}</div>
+                                    <div class="playerName">${items.playerName}</div>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -420,18 +125,14 @@
                 </div>
                 <div class="goalkeeperContent">
                     <ul class="goalkeeperPlayerList">
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
-                        <li class="playerList">
-                            <div class="playerNumber">2</div>
-                            <div class="playerName">forward1</div>
-                        </li>
+                        <c:forEach items="${teamPlayer}" varStatus="i" var="items">
+                            <c:if test="${items.playerLocationInTeam == 'Goalkeeper'}">
+                                <li class="playerList">
+                                    <div class="playerNumber">${items.playerNumber}</div>
+                                    <div class="playerName">${items.playerName}</div>
+                                </li>
+                            </c:if>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -443,21 +144,17 @@
                     <tr>
                         <th>比赛时间</th>
                         <th>主场球队</th>
-                        <th>主场球队</th>
-                        <th>主场球队</th>
+                        <th>比分</th>
+                        <th>客场球队</th>
                     </tr>
+                    <c:forEach items="${teamVersus}" varStatus="i" var="Items" >
                     <tr>
-                        <td>2017-01-01</td>
-                        <td>拜仁</td>
-                        <td>1:1</td>
-                        <td>多特</td>
+                        <td>${Items.matchDay}</td>
+                        <td>${teamName[Items.homeTeamId]}</td>
+                        <td>${Items.score}</td>
+                        <td>${teamName[Items.visitingTeamId]}</td>
                     </tr>
-                    <tr>
-                        <td>2017-01-07</td>
-                        <td>不莱梅</td>
-                        <td>1:1</td>
-                        <td>拜仁</td>
-                    </tr>
+                    </c:forEach>
                 </table>
             </div>
         </div>

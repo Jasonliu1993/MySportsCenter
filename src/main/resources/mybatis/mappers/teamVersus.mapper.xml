@@ -4,6 +4,6 @@
 
 <mapper namespace="com.mysportscenter.dao.TeamVersusDao">
     <select id="getTeamVersusByHomeTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamVersus">
-        SELECT * FROM TEAMVERSUS WHERE HOME_TEAM_ID = #{id} ORDER BY MATCH_DAY DESC
+        SELECT * FROM TEAMVERSUS WHERE (HOME_TEAM_ID = #{id} OR  VISITING_TEAM_ID = #{id}) ORDER BY MATCH_DAY DESC
     </select>
 </mapper>
