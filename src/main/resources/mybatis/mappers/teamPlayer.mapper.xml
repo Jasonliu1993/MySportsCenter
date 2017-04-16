@@ -6,4 +6,7 @@
     <select id="getTeamPlayerByTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamPlayer">
         SELECT * FROM TEAMPLAYER WHERE REF_KEY_FOR_TEAM = #{id} ORDER BY PLAYER_LOCATION_IN_TEAM DESC
     </select>
+    <select id="getTeamPlayerLocationCountByTeamId" parameterType="String" resultType="java.util.HashMap">
+        SELECT PLAYER_LOCATION_IN_TEAM location,COUNT(*) cou FROM TEAMPLAYER WHERE REF_KEY_FOR_TEAM = #{id} GROUP BY PLAYER_LOCATION_IN_TEAM
+    </select>
 </mapper>

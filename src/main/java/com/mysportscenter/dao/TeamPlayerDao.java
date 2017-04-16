@@ -3,6 +3,7 @@ package com.mysportscenter.dao;
 import com.mysportscenter.javabeans.TeamPlayer;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -11,4 +12,5 @@ import java.util.List;
 @Component
 public interface TeamPlayerDao {
     List<TeamPlayer> getTeamPlayerByTeamId(String id);
+    List<HashMap<String,Object>> getTeamPlayerLocationCountByTeamId(String id);
 }
