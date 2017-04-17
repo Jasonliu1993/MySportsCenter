@@ -45,5 +45,7 @@
         <property name="maxConnectionsPerPartition" value="150"/>
         <!-- 每个分区最小的连接数 -->
         <property name="minConnectionsPerPartition" value="5"/>
+        <!--f set to true, try to unregister the JDBC driver when pool is shutdown-->
+        <property name="deregisterDriverOnClose" value="true"/>
     </bean>
 </beans>
