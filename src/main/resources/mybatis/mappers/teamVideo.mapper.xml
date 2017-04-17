@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.mysportscenter.dao.TeamVideoDao">
-    <select id="getTeamVersusByHomeTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamVersus">
-        SELECT * FROM TEAMVERSUS WHERE (HOME_TEAM_ID = #{id} OR  VISITING_TEAM_ID = #{id}) ORDER BY MATCH_DAY DESC
+    <select id="getTeamVideoByTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamVideo">
+        SELECT * FROM TEAMVIDEO WHERE ID = ''  ORDER BY UPDATE_TIME DESC
     </select>
 </mapper>

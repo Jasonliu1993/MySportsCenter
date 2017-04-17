@@ -30,6 +30,7 @@ public class TeamInformationController {
     @RequestMapping("/teamInformation.do")
 
     public String getTeamInfo(@RequestParam("id") String id, ModelMap modelMap) {
+        System.out.println(id);
         HashMap<String,Integer> hashMap = teamPlayerService.getTeamPlayerLocationCountByTeamId(id);
         List<TeamPlayer> teamPlayers = teamPlayerService.getTeamPlayerListByTeamId(id);
         List<TeamVersus> teamVersuses = teamVersusService.getTeamVersusListByHomeTeamId(id);

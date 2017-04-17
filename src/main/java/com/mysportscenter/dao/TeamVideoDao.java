@@ -1,5 +1,6 @@
 package com.mysportscenter.dao;
 
+import com.mysportscenter.javabeans.TeamVideo;
 import org.springframework.stereotype.Component;
 
 /**
@@ -7,5 +8,5 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface TeamVideoDao {
-
+    TeamVideo getTeamVideoByTeamId(String id);
 }

@@ -11,6 +11,7 @@ public class TeamVideo {
     private String video_theme;
     private String videoThubnailsPath;
     private String teamVideoPath;
+    private String updateTime;
     private String custom1;
     private String custom2;
     private String custom3;
@@ -73,6 +74,14 @@ public class TeamVideo {
         this.teamVideoPath = teamVideoPath;
     }
 
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
+    }
+
     public String getCustom1() {
         return custom1;
     }
@@ -123,6 +132,7 @@ public class TeamVideo {
                 ", video_theme='" + video_theme + '\'' +
                 ", videoThubnailsPath='" + videoThubnailsPath + '\'' +
                 ", teamVideoPath='" + teamVideoPath + '\'' +
+                ", updateTime='" + updateTime + '\'' +
                 ", custom1='" + custom1 + '\'' +
                 ", custom2='" + custom2 + '\'' +
                 ", custom3='" + custom3 + '\'' +
