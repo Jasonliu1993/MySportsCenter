@@ -27,10 +27,10 @@
             <li class="mainNewsContent">
                 <div class="teamNameFirst">
                     <span class="teamName">${newsList.key}</span>
-                    <span class="moreTeamNews"><a href="/teamNewsMore.do?Tid=${newsList.value[1].refKeyForTeam}">+更多</a></span>
+                    <span class="moreTeamNews"><a href="/teamMore.do?id=${newsList.value[1].refKeyForTeam}&flag=${flag}">+更多</a></span>
                 </div>
                 <c:forEach items="${newsList.value}" varStatus="k" var="newsDetail">
-                <div class="teamNewsTitle"><a href="/teamNewsDetail.do?TNid=${newsDetail.id}">${newsDetail.newsTitle}</a></div>
+                <div class="teamNewsTitle"><a href="/teamDetail.do?id=${newsDetail.id}&flag=${flag}">${newsDetail.newsTitle}</a></div>
                 </c:forEach>
             </li>
         </c:forEach>

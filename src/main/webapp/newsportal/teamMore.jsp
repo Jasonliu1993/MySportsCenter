@@ -33,7 +33,7 @@
             </li>
             <c:forEach items="${newsList}" varStatus="i" var="newListItem">
             <li class="newsContentList">
-                <span class="newsTitleName">•&nbsp;&nbsp;<a href="/teamNewsDetail.do?TNid=${newListItem.id}">${newListItem.newsTitle}</a></span>
+                <span class="newsTitleName">•&nbsp;&nbsp;<a href="/teamDetail.do?id=${newListItem.id}&flag=${flag}">${newListItem.newsTitle}</a></span>
                 <span class="newsUpdateTime">${newListItem.updateTime}</span>
             </li>
             </c:forEach>

@@ -4,6 +4,6 @@
 
 <mapper namespace="com.mysportscenter.dao.TeamVideoDao">
     <select id="getTeamVideoByTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamVideo">
-        SELECT * FROM TEAMVIDEO WHERE ID = ''  ORDER BY UPDATE_TIME DESC
+        SELECT * FROM TEAMVIDEO WHERE ID = #{id}  ORDER BY UPDATE_TIME DESC
     </select>
 </mapper>
