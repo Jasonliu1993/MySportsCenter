@@ -15,7 +15,16 @@
     <script src="/js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("li[name='Navi2']").css("background-color", "#abe3e5");
+            if ("${flag}" == "News")
+            {
+                $("li[name='Navi2']").css("background-color", "#abe3e5");
+            }
+            if ("${flag}" == "Video")
+            {
+                $("li[name='Navi4']").css("background-color", "#abe3e5");
+            }
+
+
         });
     </script>
 </head>
@@ -23,18 +32,33 @@
 <%@include file="../common-page/page-header.jsp" %>
 <div class="content">
     <div class="teamTitle">
-        <h2>${teamName}新闻</h2>
+        <c:if test="${flag == 'Video'}" >
+            <h2>${teamName}视频</h2>
+        </c:if>
+        <c:if test="${flag == 'News'}" >
+            <h2>${teamName}新闻</h2>
+        </c:if>
     </div>
     <div class="teamNewsFullList">
         <ul class="teamNewsList">
             <li class="newsTitle">
-                <span class="newsTitleName">新闻列表</span>
+                <c:if test="${flag == 'Video'}" >
+                    <span class="newsTitleName">视频列表</span>
+                </c:if>
+                <c:if test="${flag == 'News'}" >
+                    <span class="newsTitleName">新闻列表</span>
+                </c:if>
                 <span class="newsUpdateTime">更新日期</span>
             </li>
-            <c:forEach items="${newsList}" varStatus="i" var="newListItem">
+            <c:forEach items="${List}" varStatus="i" var="ListItem">
             <li class="newsContentList">
-                <span class="newsTitleName">•&nbsp;&nbsp;<a href="/teamDetail.do?id=${newListItem.id}&flag=${flag}">${newListItem.newsTitle}</a></span>
-                <span class="newsUpdateTime">${newListItem.updateTime}</span>
+                <c:if test="${flag == 'Video'}" >
+                    <span class="newsTitleName">•&nbsp;&nbsp;<a href="/teamDetail.do?id=${ListItem.id}&flag=${flag}">${ListItem.videoTheme}</a></span>
+                </c:if>
+                <c:if test="${flag == 'News'}" >
+                    <span class="newsTitleName">•&nbsp;&nbsp;<a href="/teamDetail.do?id=${ListItem.id}&flag=${flag}">${ListItem.newsTitle}</a></span>
+                </c:if>
+                <span class="newsUpdateTime">${ListItem.updateTime}</span>
             </li>
             </c:forEach>
         </ul>

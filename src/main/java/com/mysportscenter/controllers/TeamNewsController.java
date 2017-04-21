@@ -23,7 +23,7 @@ public class TeamNewsController {
 
     @RequestMapping("/teamNewsSummry.do")
     public String teamNewsList(ModelMap modelMap) {
-        modelMap.addAttribute("newsListByTeamName", teamNewsService.getTop5NewsEveryteam());
+        modelMap.addAttribute("ListByTeamName", teamNewsService.getTop5NewsEveryteam());
         modelMap.addAttribute("flag","News");
         return "/newsportal/teamSummry.jsp";
     }
@@ -41,7 +41,7 @@ public class TeamNewsController {
         System.out.println("+++++++++++++++++++++");
         System.out.println("Tid=" + id);
         modelMap.addAttribute("teamName", teamInformationService.getTeamName(id));
-        modelMap.addAttribute("newsList", teamNewsService.getTeamNewsByTeamId(id));
+        modelMap.addAttribute("List", teamNewsService.getTeamNewsByTeamId(id));
         modelMap.addAttribute("flag","News");
         return "/newsportal/teamMore.jsp";
     }

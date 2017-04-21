@@ -8,9 +8,10 @@ public class TeamVideo {
     private int version;
     private String refKeyForTeam;
     private String refKeyForPersonal;
-    private String video_theme;
+    private String videoTheme;
     private String videoThubnailsPath;
     private String teamVideoPath;
+    private String teamLogopath;
     private String updateTime;
     private String custom1;
     private String custom2;
@@ -50,12 +51,12 @@ public class TeamVideo {
         this.refKeyForPersonal = refKeyForPersonal;
     }
 
-    public String getVideo_theme() {
-        return video_theme;
+    public String getVideoTheme() {
+        return videoTheme;
     }
 
-    public void setVideo_theme(String video_theme) {
-        this.video_theme = video_theme;
+    public void setVideoTheme(String videoTheme) {
+        this.videoTheme = videoTheme;
     }
 
     public String getVideoThubnailsPath() {
@@ -72,6 +73,14 @@ public class TeamVideo {
 
     public void setTeamVideoPath(String teamVideoPath) {
         this.teamVideoPath = teamVideoPath;
+    }
+
+    public String getTeamLogopath() {
+        return teamLogopath;
+    }
+
+    public void setTeamLogopath(String teamLogopath) {
+        this.teamLogopath = teamLogopath;
     }
 
     public String getUpdateTime() {
@@ -129,9 +138,10 @@ public class TeamVideo {
                 ", version=" + version +
                 ", refKeyForTeam='" + refKeyForTeam + '\'' +
                 ", refKeyForPersonal='" + refKeyForPersonal + '\'' +
-                ", video_theme='" + video_theme + '\'' +
+                ", videoheme='" + videoTheme + '\'' +
                 ", videoThubnailsPath='" + videoThubnailsPath + '\'' +
                 ", teamVideoPath='" + teamVideoPath + '\'' +
+                ", teamLogopath='" + teamLogopath + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 ", custom1='" + custom1 + '\'' +
                 ", custom2='" + custom2 + '\'' +
