@@ -1,0 +1,69 @@
+.contentTitle {
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+}
+
+.upArea {
+    width: 1000px;
+    height: 621px;
+}
+
+.upArea .mainArea {
+    width: 800px;
+    height: 621px;
+    background-color: black;
+    float: left;
+}
+
+.upArea .mainArea video {
+    width: 800px;
+    height: 621px;
+}
+
+.upArea .rollArea {
+    padding: 3px 3px 3px 3px;
+    width: 200px;
+    height: 621px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: right;
+    overflow:auto;
+}
+
+.upArea .rollArea .recommendArea {
+    width: 194px;
+    height: 615px;
+}
+
+.upArea .rollArea .recommendArea .recommendList {
+    width: 194px;
+    height: 205px;
+}
+
+.upArea .rollArea .recommendArea .recommendList .link{
+    width: 194px;
+    height: 175px;
+    text-align: center;
+    display: inline-block;
+}
+
+.upArea .rollArea .recommendArea .recommendList .link a{
+    width: 194px;
+    height: 175px;
+}
+
+.upArea .rollArea .recommendArea .recommendList .link a img{
+    width: 194px;
+    height: 175px;
+}
+
+.upArea .rollArea .recommendArea .recommendList .theme{
+    width: 194px;
+    height: 30px;
+    overflow: hidden;
+    display: inline-block;
+}

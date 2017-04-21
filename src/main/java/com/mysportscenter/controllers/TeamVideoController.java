@@ -29,12 +29,22 @@ public class TeamVideoController {
     }
 
     @RequestMapping("/teamVideoMore.do")
-    public String teamNewsDetailMore(@RequestParam("Tid") String id, ModelMap modelMap) {
+    public String teamVideoMore(@RequestParam("Tid") String id, ModelMap modelMap) {
         System.out.println("+++++++++++++++++++++");
         System.out.println("Tid=" + id);
         modelMap.addAttribute("teamName", teamInformationService.getTeamName(id));
         modelMap.addAttribute("List", teamVideoService.getAllTeamVideoByTeamId(id));
         modelMap.addAttribute("flag","Video");
         return "/newsportal/teamMore.jsp";
+    }
+
+    @RequestMapping("/teamVideoDetail.do")
+    public String teamVideoDetail(@RequestParam("TNid") String id, ModelMap modelMap) {
+        System.out.println("+++++++++++++++++++++");
+        System.out.println("Tid=" + id);
+        modelMap.addAttribute("video", teamVideoService.getTeamVideoById(id));
+        modelMap.addAttribute("recommededVideo",teamVideoService.getTop5TeamVideoByTeamId(teamVideoService.getTeamVideoById(id).getRefKeyForTeam()));
+        modelMap.addAttribute("flag","Video");
+        return "/newsportal/teamVideoDetail.jsp";
     }
 }

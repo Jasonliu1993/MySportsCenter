@@ -38,4 +38,8 @@ public class TeamVideoService {
         }
         return hashMap;
     }
+
+    public List<TeamVideo> getTop5TeamVideoByTeamId(String id) {
+        return teamVideoDao.selectAllTeamVideoAndLogoPathTop5ById(id);
+    }
 }

@@ -9,7 +9,7 @@ public class TeamVideo {
     private String refKeyForTeam;
     private String refKeyForPersonal;
     private String videoTheme;
-    private String videoThubnailsPath;
+    private String videoThumbnailsPath;
     private String teamVideoPath;
     private String teamLogopath;
     private String updateTime;
@@ -59,12 +59,12 @@ public class TeamVideo {
         this.videoTheme = videoTheme;
     }
 
-    public String getVideoThubnailsPath() {
-        return videoThubnailsPath;
+    public String getVideoThumbnailsPath() {
+        return videoThumbnailsPath;
     }
 
-    public void setVideoThubnailsPath(String videoThubnailsPath) {
-        this.videoThubnailsPath = videoThubnailsPath;
+    public void setVideoThumbnailsPath(String videoThumbnailsPath) {
+        this.videoThumbnailsPath = videoThumbnailsPath;
     }
 
     public String getTeamVideoPath() {
@@ -138,8 +138,8 @@ public class TeamVideo {
                 ", version=" + version +
                 ", refKeyForTeam='" + refKeyForTeam + '\'' +
                 ", refKeyForPersonal='" + refKeyForPersonal + '\'' +
-                ", videoheme='" + videoTheme + '\'' +
-                ", videoThubnailsPath='" + videoThubnailsPath + '\'' +
+                ", videoTheme='" + videoTheme + '\'' +
+                ", videoThumbnailsPath='" + videoThumbnailsPath + '\'' +
                 ", teamVideoPath='" + teamVideoPath + '\'' +
                 ", teamLogopath='" + teamLogopath + '\'' +
                 ", updateTime='" + updateTime + '\'' +
