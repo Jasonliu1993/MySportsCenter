@@ -1,4 +1,4 @@
-package com.mysportscenter.javabeans;
+package com.mysportscenter.potal.entity;
 
 /**
  * Created by Jason on 4/17/17.

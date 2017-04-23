@@ -115,6 +115,7 @@
     width: 1000px;
     margin: 10px auto;
     padding-top: 40px;
+    float: left;
 }
 
 .content .coreContent .teamPlayer .forwardTitle {
@@ -137,6 +138,7 @@
 .content .coreContent .teamPlayer .midfielder {
     width: 1000px;
     margin: 10px auto;
+    float: left;
 }
 
 .content .coreContent .teamPlayer .midfielderTitle {
@@ -159,6 +161,7 @@
 .content .coreContent .teamPlayer .back {
     width: 1000px;
     margin: 10px auto;
+    float: left;
 }
 
 .content .coreContent .teamPlayer .backTitle {
@@ -181,6 +184,7 @@
 .content .coreContent .teamPlayer .goalkeeper {
     width: 1000px;
     margin: 10px auto;
+    float: left;
 }
 
 .content .coreContent .teamPlayer .goalkeeperTitle {

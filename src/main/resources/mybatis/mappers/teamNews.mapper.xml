@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mysportscenter.dao.TeamNewsDao">
+<mapper namespace="com.mysportscenter.potal.dao.TeamNewsDao">
     <select id="selectTop6TeamNewsAndLogoPath" resultMap="TeamNewsAndLogo">
         SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
 ORDER BY A.RANKING, B.UPDATE_TIME DESC LIMIT 0, 60
     </select>
-    <resultMap id="TeamNewsAndLogo" type="com.mysportscenter.javabeans.TeamNews">
+    <resultMap id="TeamNewsAndLogo" type="com.mysportscenter.potal.entity.TeamNews">
         <id column="id" property="id" />
         <result column="version" property="version" />
         <result column="news_title" property="newsTitle" />
@@ -26,11 +26,11 @@ ORDER BY A.RANKING, B.UPDATE_TIME DESC LIMIT 0, 60
         WHERE A.ID = #{id}
         ORDER BY B.UPDATE_TIME DESC LIMIT 0, 5
     </select>
-    <select id="selectTeamNewsById" parameterType="String" resultType="com.mysportscenter.javabeans.TeamNews">
+    <select id="selectTeamNewsById" parameterType="String" resultType="com.mysportscenter.potal.entity.TeamNews">
         SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
         WHERE B.ID = #{id}
     </select>
-    <select id="selectTeamNewsByTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamNews">
+    <select id="selectTeamNewsByTeamId" parameterType="String" resultType="com.mysportscenter.potal.entity.TeamNews">
         SELECT B.*,A.TEAM_LOGO_PATH FROM TEAMINFORMATION A INNER JOIN TEAMNEWS B ON A.ID = B.REF_KEY_FOR_TEAM
         WHERE A.ID = #{id}
     </select>

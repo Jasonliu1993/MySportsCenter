@@ -1,12 +1,13 @@
-package com.mysportscenter.javabeans;
+package com.mysportscenter.potal.entity;
 
 /**
  * Created by Jason on 3/30/17.
  */
-public class PicCenter {
+public class TeamNews {
     private String id;
     private int version;
-    private String picPath;
+    private String newsTitle;
+    private String newsContent;
     private String refKeyForTeam;
     private String refKeyForPerson;
     private String updateTime;
@@ -15,6 +16,16 @@ public class PicCenter {
     private String custom3;
     private String custom4;
     private String custom5;
+
+    private String teamLogoPath;
+
+    public String getTeamLogoPath() {
+        return teamLogoPath;
+    }
+
+    public void setTeamLogoPath(String teamLogoPath) {
+        this.teamLogoPath = teamLogoPath;
+    }
 
     public String getId() {
         return id;
@@ -32,12 +43,20 @@ public class PicCenter {
         this.version = version;
     }
 
-    public String getPicPath() {
-        return picPath;
+    public String getNewsTitle() {
+        return newsTitle;
     }
 
-    public void setPicPath(String picPath) {
-        this.picPath = picPath;
+    public void setNewsTitle(String newsTitle) {
+        this.newsTitle = newsTitle;
+    }
+
+    public String getNewsContent() {
+        return newsContent;
+    }
+
+    public void setNewsContent(String newsContent) {
+        this.newsContent = newsContent;
     }
 
     public String getRefKeyForTeam() {
@@ -106,10 +125,11 @@ public class PicCenter {
 
     @Override
     public String toString() {
-        return "PicCenter{" +
+        return "TeamNews{" +
                 "id='" + id + '\'' +
                 ", version=" + version +
-                ", picPath='" + picPath + '\'' +
+                ", newsTitle='" + newsTitle + '\'' +
+                ", newsContent='" + newsContent + '\'' +
                 ", refKeyForTeam='" + refKeyForTeam + '\'' +
                 ", refKeyForPerson='" + refKeyForPerson + '\'' +
                 ", updateTime='" + updateTime + '\'' +
@@ -118,6 +138,7 @@ public class PicCenter {
                 ", custom3='" + custom3 + '\'' +
                 ", custom4='" + custom4 + '\'' +
                 ", custom5='" + custom5 + '\'' +
+                ", teamLogoPath='" + teamLogoPath + '\'' +
                 '}';
     }
 }

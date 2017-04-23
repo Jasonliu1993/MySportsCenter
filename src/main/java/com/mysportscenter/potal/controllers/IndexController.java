@@ -1,8 +1,6 @@
-package com.mysportscenter.controllers;
+package com.mysportscenter.potal.controllers;
 
-import com.mysportscenter.dao.PicCenterDao;
-import com.mysportscenter.javabeans.PicCenter;
-import com.mysportscenter.services.IndexService;
+import com.mysportscenter.potal.services.IndexService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by Jason on 3/26/17.

@@ -150,9 +150,9 @@
                     <c:forEach items="${teamVersus}" varStatus="i" var="Items" >
                     <tr>
                         <td>${Items.matchDay}</td>
-                        <td>${teamName[Items.homeTeamId]}</td>
+                        <td>${teamVersusName[Items.homeTeamId]}</td>
                         <td>${Items.score}</td>
-                        <td>${teamName[Items.visitingTeamId]}</td>
+                        <td>${teamVersusName[Items.visitingTeamId]}</td>
                     </tr>
                     </c:forEach>
                 </table>

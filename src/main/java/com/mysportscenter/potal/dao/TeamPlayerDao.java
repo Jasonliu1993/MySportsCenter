@@ -1,6 +1,6 @@
-package com.mysportscenter.dao;
+package com.mysportscenter.potal.dao;
 
-import com.mysportscenter.javabeans.TeamPlayer;
+import com.mysportscenter.potal.entity.TeamPlayer;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;

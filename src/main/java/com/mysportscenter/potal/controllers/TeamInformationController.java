@@ -1,17 +1,16 @@
-package com.mysportscenter.controllers;
+package com.mysportscenter.potal.controllers;
 
-import com.mysportscenter.javabeans.TeamPlayer;
-import com.mysportscenter.javabeans.TeamVersus;
-import com.mysportscenter.services.TeamInformationService;
-import com.mysportscenter.services.TeamPlayerService;
-import com.mysportscenter.services.TeamVersusService;
+import com.mysportscenter.potal.entity.TeamPlayer;
+import com.mysportscenter.potal.entity.TeamVersus;
+import com.mysportscenter.potal.services.TeamInformationService;
+import com.mysportscenter.potal.services.TeamPlayerService;
+import com.mysportscenter.potal.services.TeamVersusService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 

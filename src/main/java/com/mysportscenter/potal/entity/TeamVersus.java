@@ -1,31 +1,21 @@
-package com.mysportscenter.javabeans;
+package com.mysportscenter.potal.entity;
 
 /**
- * Created by Jason on 3/30/17.
+ * Created by Jason on 4/10/17.
  */
-public class TeamNews {
+public class TeamVersus {
     private String id;
     private int version;
-    private String newsTitle;
-    private String newsContent;
-    private String refKeyForTeam;
-    private String refKeyForPerson;
+    private String homeTeamId;
+    private String visitingTeamId;
+    private String score;
+    private String matchDay;
     private String updateTime;
     private String custom1;
     private String custom2;
     private String custom3;
     private String custom4;
     private String custom5;
-
-    private String teamLogoPath;
-
-    public String getTeamLogoPath() {
-        return teamLogoPath;
-    }
-
-    public void setTeamLogoPath(String teamLogoPath) {
-        this.teamLogoPath = teamLogoPath;
-    }
 
     public String getId() {
         return id;
@@ -43,36 +33,36 @@ public class TeamNews {
         this.version = version;
     }
 
-    public String getNewsTitle() {
-        return newsTitle;
+    public String getHomeTeamId() {
+        return homeTeamId;
     }
 
-    public void setNewsTitle(String newsTitle) {
-        this.newsTitle = newsTitle;
+    public void setHomeTeamId(String homeTeamId) {
+        this.homeTeamId = homeTeamId;
     }
 
-    public String getNewsContent() {
-        return newsContent;
+    public String getVisitingTeamId() {
+        return visitingTeamId;
     }
 
-    public void setNewsContent(String newsContent) {
-        this.newsContent = newsContent;
+    public void setVisitingTeamId(String visitingTeamId) {
+        this.visitingTeamId = visitingTeamId;
     }
 
-    public String getRefKeyForTeam() {
-        return refKeyForTeam;
+    public String getScore() {
+        return score;
     }
 
-    public void setRefKeyForTeam(String refKeyForTeam) {
-        this.refKeyForTeam = refKeyForTeam;
+    public void setScore(String score) {
+        this.score = score;
     }
 
-    public String getRefKeyForPerson() {
-        return refKeyForPerson;
+    public String getMatchDay() {
+        return matchDay;
     }
 
-    public void setRefKeyForPerson(String refKeyForPerson) {
-        this.refKeyForPerson = refKeyForPerson;
+    public void setMatchDay(String matchDay) {
+        this.matchDay = matchDay;
     }
 
     public String getUpdateTime() {
@@ -125,20 +115,19 @@ public class TeamNews {
 
     @Override
     public String toString() {
-        return "TeamNews{" +
+        return "TeamPlayer{" +
                 "id='" + id + '\'' +
                 ", version=" + version +
-                ", newsTitle='" + newsTitle + '\'' +
-                ", newsContent='" + newsContent + '\'' +
-                ", refKeyForTeam='" + refKeyForTeam + '\'' +
-                ", refKeyForPerson='" + refKeyForPerson + '\'' +
+                ", homeTeamId='" + homeTeamId + '\'' +
+                ", visitingTeamId='" + visitingTeamId + '\'' +
+                ", score='" + score + '\'' +
+                ", matchDay='" + matchDay + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 ", custom1='" + custom1 + '\'' +
                 ", custom2='" + custom2 + '\'' +
                 ", custom3='" + custom3 + '\'' +
                 ", custom4='" + custom4 + '\'' +
                 ", custom5='" + custom5 + '\'' +
-                ", teamLogoPath='" + teamLogoPath + '\'' +
                 '}';
     }
 }

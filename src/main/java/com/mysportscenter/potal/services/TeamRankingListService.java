@@ -1,7 +1,7 @@
-package com.mysportscenter.services;
+package com.mysportscenter.potal.services;
 
-import com.mysportscenter.dao.TeamInformationDao;
-import com.mysportscenter.javabeans.TeamInformation;
+import com.mysportscenter.potal.dao.TeamInformationDao;
+import com.mysportscenter.potal.entity.TeamInformation;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

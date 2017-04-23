@@ -1,6 +1,6 @@
-package com.mysportscenter.controllers;
+package com.mysportscenter.potal.controllers;
 
-import com.mysportscenter.services.TeamRankingListService;
+import com.mysportscenter.potal.services.TeamRankingListService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;

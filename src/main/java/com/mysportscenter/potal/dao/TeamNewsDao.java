@@ -1,6 +1,6 @@
-package com.mysportscenter.dao;
+package com.mysportscenter.potal.dao;
 
-import com.mysportscenter.javabeans.TeamNews;
+import com.mysportscenter.potal.entity.TeamNews;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

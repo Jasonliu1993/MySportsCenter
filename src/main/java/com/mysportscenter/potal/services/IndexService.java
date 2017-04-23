@@ -1,13 +1,12 @@
-package com.mysportscenter.services;
+package com.mysportscenter.potal.services;
 
-import com.mysportscenter.dao.PicCenterDao;
-import com.mysportscenter.dao.TeamNewsDao;
-import com.mysportscenter.javabeans.PicCenter;
-import com.mysportscenter.javabeans.TeamNews;
+import com.mysportscenter.potal.dao.PicCenterDao;
+import com.mysportscenter.potal.dao.TeamNewsDao;
+import com.mysportscenter.potal.entity.PicCenter;
+import com.mysportscenter.potal.entity.TeamNews;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
 import java.util.List;
 
 /**

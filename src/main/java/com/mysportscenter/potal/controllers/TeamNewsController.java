@@ -1,15 +1,14 @@
-package com.mysportscenter.controllers;
+package com.mysportscenter.potal.controllers;
 
-import com.mysportscenter.javabeans.TeamNews;
-import com.mysportscenter.services.TeamInformationService;
-import com.mysportscenter.services.TeamNewsService;
+import com.mysportscenter.potal.entity.TeamNews;
+import com.mysportscenter.potal.services.TeamInformationService;
+import com.mysportscenter.potal.services.TeamNewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * Created by Jason on 4/5/17.

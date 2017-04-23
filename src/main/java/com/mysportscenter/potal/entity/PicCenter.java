@@ -1,15 +1,14 @@
-package com.mysportscenter.javabeans;
+package com.mysportscenter.potal.entity;
 
 /**
- * Created by Jason on 4/10/17.
+ * Created by Jason on 3/30/17.
  */
-public class TeamVersus {
+public class PicCenter {
     private String id;
     private int version;
-    private String homeTeamId;
-    private String visitingTeamId;
-    private String score;
-    private String matchDay;
+    private String picPath;
+    private String refKeyForTeam;
+    private String refKeyForPerson;
     private String updateTime;
     private String custom1;
     private String custom2;
@@ -33,36 +32,28 @@ public class TeamVersus {
         this.version = version;
     }
 
-    public String getHomeTeamId() {
-        return homeTeamId;
+    public String getPicPath() {
+        return picPath;
     }
 
-    public void setHomeTeamId(String homeTeamId) {
-        this.homeTeamId = homeTeamId;
+    public void setPicPath(String picPath) {
+        this.picPath = picPath;
     }
 
-    public String getVisitingTeamId() {
-        return visitingTeamId;
+    public String getRefKeyForTeam() {
+        return refKeyForTeam;
     }
 
-    public void setVisitingTeamId(String visitingTeamId) {
-        this.visitingTeamId = visitingTeamId;
+    public void setRefKeyForTeam(String refKeyForTeam) {
+        this.refKeyForTeam = refKeyForTeam;
     }
 
-    public String getScore() {
-        return score;
+    public String getRefKeyForPerson() {
+        return refKeyForPerson;
     }
 
-    public void setScore(String score) {
-        this.score = score;
-    }
-
-    public String getMatchDay() {
-        return matchDay;
-    }
-
-    public void setMatchDay(String matchDay) {
-        this.matchDay = matchDay;
+    public void setRefKeyForPerson(String refKeyForPerson) {
+        this.refKeyForPerson = refKeyForPerson;
     }
 
     public String getUpdateTime() {
@@ -115,13 +106,12 @@ public class TeamVersus {
 
     @Override
     public String toString() {
-        return "TeamPlayer{" +
+        return "PicCenter{" +
                 "id='" + id + '\'' +
                 ", version=" + version +
-                ", homeTeamId='" + homeTeamId + '\'' +
-                ", visitingTeamId='" + visitingTeamId + '\'' +
-                ", score='" + score + '\'' +
-                ", matchDay='" + matchDay + '\'' +
+                ", picPath='" + picPath + '\'' +
+                ", refKeyForTeam='" + refKeyForTeam + '\'' +
+                ", refKeyForPerson='" + refKeyForPerson + '\'' +
                 ", updateTime='" + updateTime + '\'' +
                 ", custom1='" + custom1 + '\'' +
                 ", custom2='" + custom2 + '\'' +

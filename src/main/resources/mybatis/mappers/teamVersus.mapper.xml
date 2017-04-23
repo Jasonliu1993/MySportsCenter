@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.mysportscenter.dao.TeamVersusDao">
-    <select id="getTeamVersusByHomeTeamId" parameterType="String" resultType="com.mysportscenter.javabeans.TeamVersus">
+<mapper namespace="com.mysportscenter.potal.dao.TeamVersusDao">
+    <select id="getTeamVersusByHomeTeamId" parameterType="String" resultType="com.mysportscenter.potal.entity.TeamVersus">
         SELECT * FROM TEAMVERSUS WHERE (HOME_TEAM_ID = #{id} OR  VISITING_TEAM_ID = #{id}) ORDER BY MATCH_DAY DESC
     </select>
 </mapper>
