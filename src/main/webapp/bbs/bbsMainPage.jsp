@@ -9,7 +9,13 @@
 <html>
 <head>
     <title>BBS论坛</title>
+    <link rel="stylesheet" href="../css/common-core.css">
+    <%--<link rel="stylesheet" href="../css/mainpage/index.css">--%>
     <style>
+        .content {
+            margin: 10px auto;
+        }
+
         .title span {
             padding-left: 300px;
         }
@@ -27,7 +33,7 @@
             font-size: 25px;
             font-weight: bold;
             text-align: center;
-            background-color: #f2f2f2;
+            background-color: #c2c3c3;
             border: 1px solid #d5d5d5;
             box-sizing: border-box;
         }
@@ -39,26 +45,93 @@
             font-size: 25px;
             font-weight: bold;
             text-align: center;
-            background-color: #eff0f1;
+            background-color: #888888;
             border: 1px solid #d5d5d5;
             box-sizing: border-box;
         }
 
-        .mainList li span {
+        .mainList li .forumTheme {
             display: inline-block;
-            width: 900px;
+            width: 800px;
             height: 50px;
-            text-align: center;
+            text-align: left;
+            float: left;
         }
 
-        .mainList li span a {
+        .mainList li .forumTheme a {
+            padding-left: 30px;
             color: #f02136;
             text-decoration: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
 
-        .mainList li span a:hover {
+        .mainList li .forumTheme a:hover {
             color: #c2e7e8;
             text-decoration: none;
+        }
+
+        .mainList li .postArea  {
+            display: inline-block;
+            width: 99px;
+            height: 48px;
+            text-align: center;
+            float: left;
+        }
+
+        .mainList li .postArea .poster {
+            display: inline-block;
+            width: 99px;
+            height: 24px;
+            text-align: center;
+            line-height:25px;
+            float: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: #4e4e4e;
+        }
+
+        .mainList li .postArea .postTime {
+            display: inline-block;
+            width: 99px;
+            height: 24px;
+            text-align: center;
+            line-height:25px;
+            float: left;
+            font-size: 13px;
+            font-weight: bold;
+            color: #4e4e4e;
+        }
+
+        .mainList li .replyArea  {
+            display: inline-block;
+            width: 99px;
+            height: 48px;
+            text-align: center;
+            float: left;
+        }
+        .mainList li .replyArea .replier {
+            display: inline-block;
+            width: 99px;
+            height: 24px;
+            text-align: center;
+            line-height:25px;
+            float: left;
+            font-size: 15px;
+            font-weight: bold;
+            color: #4e4e4e;
+        }
+        .mainList li .replyArea .replyTime {
+            display: inline-block;
+            width: 99px;
+            height: 24px;
+            text-align: center;
+            line-height:25px;
+            float: left;
+            font-size: 13px;
+            font-weight: bold;
+            color: #4e4e4e;
         }
 
         .inputArea {
@@ -128,10 +201,10 @@
             box-sizing: border-box;
         }
     </style>
-    <script type="text/JavaScript" charset="utf-8" src="/js/jquery-3.1.1.min.js"></script>
+    <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $("li[name='Navi6']").css("background-color","#abe3e5");
+        $(document).ready(function () {
+            $("li[name='Navi6']").css("background-color", "#abe3e5");
         });
     </script>
 </head>
@@ -140,21 +213,110 @@
 <div class="content">
     <ul class="mainList">
         <li>
-            <span>
+            <span class="forumTheme">
                 <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
                 <a href="#">test 1</a>
-                <a href="#">test 1</a>
-                <a href="#">test 1</a>
-                <a href="#">test 1</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 2</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 3</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 4</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 5</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 6</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
+            </span>
+        </li>
+        <li>
+            <span class="forumTheme">
+                <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
+                <a href="#">test 7</a>
+            </span>
+            <span class="postArea">
+                <span class="poster">发帖人</span>
+                <span class="postTime">2017-01-01</span>
+            </span>
+            <span class="replyArea">
+                <span class="replier">最后回复人</span>
+                <span class="replyTime">2017-01-04</span>
             </span>
         </li>
     </ul>
 </div>
-<form action="/SendForumController?action=postForum" method="post">
+<form action="/SendForum.do?action=postForum" method="post">
     <div class="inputArea">
         <div class="themeArea">
                 <span class="themeLabelArea">
-                    <label for="theme">主题:</label>
+                    <label for="theme" style="color:white">主题:</label>
                 </span>
                 <span class="themeInputArea">
                     <input type="text" name="theme" id="theme">
