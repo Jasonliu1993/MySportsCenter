@@ -8,10 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="fixedmenu">
     <div class="fixedmenuArea">
-        <c:if test="${empty session.userName}">
+        <c:if test="${empty sessionScope.userName}">
             <span class="static">欢迎来到 My Sports Center</span>
             <span class="LoginButton"><a href="/login/login.jsp">登录</a></span>
             <span class="registerButton"><a href="/login/register.html">注册</a></span>
+        </c:if>
+        <c:if test="${!empty sessionScope.userName}">
+            <span class="static">${sessionScope.userName},欢迎回来!</span>
+            <%--<span class="LoginButton"><a href="/login/login.jsp">登录</a></span>
+            <span class="registerButton"><a href="/login/register.html">注册</a></span>--%>
         </c:if>
     </div>
 </div>

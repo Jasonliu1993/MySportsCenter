@@ -25,7 +25,7 @@
         <img src="/images/programpic/login.png" alt="mainPic">
     </div>
     <div class="rightContent">
-        <form action="/LoginController" method="post">
+        <form action="/login.do" method="post">
             <div class="inputArea">
                 <label for="name">用户名:</label>
                 <input type="text" id="name" name="name" >
