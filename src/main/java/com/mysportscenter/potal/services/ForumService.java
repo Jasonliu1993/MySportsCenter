@@ -1,6 +1,7 @@
 package com.mysportscenter.potal.services;
 
 import com.mysportscenter.potal.dao.ForumDao;
+import com.mysportscenter.potal.entity.ForumContent;
 import com.mysportscenter.potal.entity.ForumTheme;
 
 import java.util.LinkedList;
@@ -31,6 +32,10 @@ public class ForumService {
             list.add(forumTheme);
         }
         return list;
+    }
+
+    public List<ForumContent> getAllForumContentByid(String id) {
+        return forumDao.getAllForumContentByid(id);
     }
 
 }

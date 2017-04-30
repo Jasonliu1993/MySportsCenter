@@ -25,9 +25,9 @@ public class ForumMainController {
     }
 
     @RequestMapping("forumDetail.do")
-    public String ForumDetailPage(ModelMap modelMap) {
-        modelMap.addAttribute("ForumTheme", forumService.getAllForumTheme());
-        return "/bbs/bbsMainPage.jsp";
+    public String ForumDetailPage(ModelMap modelMap,@RequestParam("Id") String id) {
+        modelMap.addAttribute("ForumContent", forumService.getAllForumContentByid(id));
+        return "/bbs/bbsForumDetailPage.jsp";
     }
 
     @RequestMapping("/SendForum.do")

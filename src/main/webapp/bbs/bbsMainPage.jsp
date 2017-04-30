@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>BBS论坛</title>
+    <title>My Sports Center 论坛</title>
     <link rel="stylesheet" href="../css/common-core.css">
     <link rel="stylesheet" href="../css/bbs/bbsMainPage.css">
     <style>

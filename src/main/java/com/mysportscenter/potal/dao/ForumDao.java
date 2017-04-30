@@ -12,5 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface ForumDao {
     List<ForumTheme> getAllForumTheme();
+    List<ForumContent> getAllForumContentByid(@Param("id") String id);
     ForumContent getLastForumCreatorByid(@Param("id") String id);
 }

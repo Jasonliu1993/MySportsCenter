@@ -1,0 +1,91 @@
+.content {
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid white;
+    box-sizing: border-box;
+    background-color: #d5d5d5;
+}
+.mainList {
+    width: 1000px;
+    margin: 0 auto;
+    list-style: none;
+}
+.mainList li {
+    width: 1000px;
+    height: 250px;
+}
+.mainList li span {
+    display: inline-block;
+}
+.mainList li .info {
+    width: 200px;
+    height: 250px;
+    float: left;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mainList li .forumContent {
+    float: right;
+    width: 790px;
+    height: 250px;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mainList li .forumContent .mainForumContent {
+    width: 730px;
+    height: 170px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #e7e8e8;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 24px;
+}
+.mainList li .forumContent .replyForum {
+    width: 730px;
+    height: 30px;
+    margin: 5px auto;
+}
+.mainList li .forumContent .replyForum .datetime {
+    float: left;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+}
+.mainList li .forumContent .replyForum .reply {
+    float: right;
+    width: 100px;
+    height: 10px;
+    line-height: 30px;
+    text-decoration: none;
+}
+.inputArea {
+    width: 1000px;
+    height: 300px;
+    margin: 20px auto;
+    border: 1px solid white;
+}
+.inputArea .contentArea {
+    width: 800px;
+    height: 200px;
+    margin: 25px auto;
+}
+.inputArea .contentArea .contentInputArea {
+    width: 800px;
+    height: 200px;
+    resize: none;
+}
+.submitArea {
+    height: 40px;
+    width: 1000px;
+    padding-left: 133px;
+    padding-top: 7px;
+}
+.submitArea button {
+    height: 30px;
+    width: 50px;
+}

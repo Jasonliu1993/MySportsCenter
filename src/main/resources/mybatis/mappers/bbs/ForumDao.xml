@@ -12,4 +12,7 @@
         WHERE FORUM_THEME_ID = #{id}
         AND ORDER_ID = (SELECT MAX(B.ORDER_ID) FROM FORUMCONTENT B WHERE A.FORUM_THEME_ID = B.FORUM_THEME_ID)
     </select>
+    <select id="getAllForumContentByid" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumContent">
+        SELECT * FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id} ORDER BY CREATE_DATETIME DESC,ORDER_ID DESC
+    </select>
 </mapper>
