@@ -1,0 +1,188 @@
+.content {
+    margin: 10px auto;
+}
+
+.title span {
+    padding-left: 300px;
+}
+
+.mainList {
+    width: 1000px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.mainList li:nth-child(2n + 1) {
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #c2c3c3;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+}
+
+.mainList li:nth-child(2n) {
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #888888;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+}
+
+.mainList li .forumTheme {
+    display: inline-block;
+    width: 800px;
+    height: 50px;
+    text-align: left;
+    float: left;
+}
+
+.mainList li .forumTheme a {
+    padding-left: 30px;
+    color: #f02136;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mainList li .forumTheme a:hover {
+    color: #c2e7e8;
+    text-decoration: none;
+}
+
+.mainList li .postArea  {
+    display: inline-block;
+    width: 99px;
+    height: 48px;
+    text-align: center;
+    float: left;
+}
+
+.mainList li .postArea .poster {
+    display: inline-block;
+    width: 99px;
+    height: 24px;
+    text-align: center;
+    line-height:25px;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+
+.mainList li .postArea .postTime {
+    display: inline-block;
+    width: 99px;
+    height: 24px;
+    text-align: center;
+    line-height:25px;
+    float: left;
+    font-size: 9px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+
+.mainList li .replyArea  {
+    display: inline-block;
+    width: 99px;
+    height: 48px;
+    text-align: center;
+    float: left;
+}
+.mainList li .replyArea .replier {
+    display: inline-block;
+    width: 99px;
+    height: 24px;
+    text-align: center;
+    line-height:25px;
+    float: left;
+    font-size: 15px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+.mainList li .replyArea .replyTime {
+    display: inline-block;
+    width: 99px;
+    height: 24px;
+    text-align: center;
+    line-height:25px;
+    float: left;
+    font-size: 9px;
+    font-weight: bold;
+    color: #4e4e4e;
+}
+
+.inputArea {
+    width: 1000px;
+    height: 300px;
+    margin: 20px auto;
+    border: 1px solid white;
+}
+
+.inputArea .themeArea {
+    width: 1000px;
+    height: 60px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.inputArea .themeArea .themeLabelArea {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.inputArea .themeArea .themeInputArea {
+    width: 900px;
+    height: 30px;
+}
+
+.inputArea .themeArea .themeInputArea input[type="text"] {
+    width: 800px;
+    height: 30px;
+}
+
+.inputArea .contentArea {
+    width: 1000px;
+    height: 200px;
+}
+
+.inputArea .contentArea .contentLabelArea {
+    display: inline-block;
+    width: 100px;
+    height: 200px;
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+.inputArea .contentArea .contentInputArea {
+    width: 800px;
+    height: 200px;
+    resize: none;
+}
+
+.submitArea {
+    height: 40px;
+    width: 1000px;
+    padding-left: 133px;
+    padding-top: 7px;
+}
+
+.submitArea input[type = "submit"] {
+    height: 30px;
+    width: 50px;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

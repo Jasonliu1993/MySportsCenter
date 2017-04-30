@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mysportscenter.potal.dao.ForumDao">
+    <select id="getAllForumTheme" resultType="com.mysportscenter.potal.entity.ForumTheme">
+        SELECT * FROM FORUMTHEME ORDER BY POST_DATETIME DESC
+    </select>
+    <select id="getLastForumCreatorByid" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumContent">
+        SELECT *
+        FROM FORUMCONTENT A
+        WHERE FORUM_THEME_ID = #{id}
+        AND ORDER_ID = (SELECT MAX(B.ORDER_ID) FROM FORUMCONTENT B WHERE A.FORUM_THEME_ID = B.FORUM_THEME_ID)
+    </select>
+</mapper>

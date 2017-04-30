@@ -1,10 +1,12 @@
 package com.mysportscenter.potal.controllers;
 
+import com.mysportscenter.potal.services.ForumService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -13,8 +15,18 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class ForumMainController {
 
+    @Resource
+    ForumService forumService;
+
     @RequestMapping("forumMain.do")
     public String ForumMainPage(ModelMap modelMap) {
+        modelMap.addAttribute("ForumTheme", forumService.getAllForumTheme());
+        return "/bbs/bbsMainPage.jsp";
+    }
+
+    @RequestMapping("forumDetail.do")
+    public String ForumDetailPage(ModelMap modelMap) {
+        modelMap.addAttribute("ForumTheme", forumService.getAllForumTheme());
         return "/bbs/bbsMainPage.jsp";
     }
 
