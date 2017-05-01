@@ -30,4 +30,11 @@ public class LoginController {
         }
 
     }
+
+    @RequestMapping(value = "/newRegister.do", method = RequestMethod.POST)
+    public String saveNewRegister(String name, String password, HttpSession session) {
+        loginDataService.saveNewUser(name,password);
+        session.setAttribute("userName",name);
+        return "/index.jsp";
+    }
 }

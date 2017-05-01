@@ -15,4 +15,19 @@
     <select id="getAllForumContentByid" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumContent">
         SELECT * FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id} ORDER BY CREATE_DATETIME DESC,ORDER_ID DESC
     </select>
+    <select id="existForumTheme" parameterType="String" resultType="String">
+        SELECT 'X' FROM FORUMTHEME A WHERE ID = #{id}
+    </select>
+    <select id="existForumContent" parameterType="String" resultType="String">
+        SELECT 'X' FROM FORUMCONTENT A WHERE ID = #{id}
+    </select>
+    <select id="findMaxForumContentOrderId" parameterType="String" resultType="int">
+        SELECT MAX(ORDER_ID) FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id}
+    </select>
+    <update id="saveForumTheme" parameterType="com.mysportscenter.potal.entity.ForumTheme">
+        INSERT INTO FORUMTHEME VALUES(#{id}, #{version}, #{forumTheme}, #{forumCreaterRefId}, #{postDatetime}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
+    </update>
+    <update id="saveForumContent" parameterType="com.mysportscenter.potal.entity.ForumContent">
+        INSERT INTO FORUMCONTENT VALUES(#{id}, #{version}, #{orderId}, #{forumContent}, #{createDatetime}, #{createUser}, #{forumThemeId}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
+    </update>
 </mapper>

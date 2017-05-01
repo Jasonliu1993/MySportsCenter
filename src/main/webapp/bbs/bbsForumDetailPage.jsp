@@ -18,10 +18,6 @@
             $("li[name='Navi6']").css("background-color", "#abe3e5");
         });
     </script>
-    <style>
-
-
-    </style>
 </head>
 <body style="background-color: #d5d5d5">
 <%@include file="../common-page/page-header.jsp" %>
@@ -45,15 +41,30 @@
     </ul>
 </div>
 <div class="inputArea">
-    <div class="contentArea">
-        <span class="contentLabelArea"></span>
-        <textarea name="contentArea" id="contentArea" class="contentInputArea"></textarea>
-        <input type="hidden" id="forumThemeID" value="#">
-    </div>
-    <div class="submitArea">
-        <input type="submit" class="inputBottom" value="回复"/>
-        <%--<button class="inputBottom" onclick="ajax2SendForum()">回复</button>--%>
-    </div>
+    <form action="/sendNewForumContenr.do" method="post">
+        <div class="contentArea">
+            <span class="contentLabelArea">回复内容:</span>
+            <div class="contentInputArea">
+                <c:if test="${!empty sessionScope.userName}">
+                    <div class="contentNotNoneInputArea">
+                        <textarea name="contentArea" id="contentArea" ></textarea>
+                    </div>
+                </c:if>
+                <c:if test="${empty sessionScope.userName}">
+                    <div class="contentNoneInputArea">
+                        请先登录:
+                        <a href="/login/login.jsp">登录</a>
+                        <a href="/login/register.html">注册</a>
+                    </div>
+                </c:if>
+            </div>
+            <input type="hidden" id="forumThemeID" name="forumThemeID" value="#">
+        </div>
+        <div class="submitArea">
+            <input type="hidden" id = "forumTheme" name = "forumTheme" value="${ForumContent[0].forumThemeId}">
+            <input type="submit" class="inputBottom" value="回复"/>
+        </div>
+    </form>
 </div>
 <%@include file="../common-page/page-footer.jsp" %>
 </body>

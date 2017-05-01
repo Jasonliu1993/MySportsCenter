@@ -9,4 +9,7 @@
     <select id="getLoginDataByUsernameAndPassword" parameterType="String" resultType="com.mysportscenter.potal.entity.LoginData">
         SELECT * FROM LOGINDATA WHERE USERNAME = #{username} AND PASSWORD = #{password}
     </select>
+    <insert id="saveNewUser" parameterType="com.mysportscenter.potal.entity.LoginData">
+        INSERT INTO LOGINDATA VALUES(#{id}, #{version}, #{username}, #{password}, #{createDatetime}, #{lastUpdateDatetime}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
+    </insert>
 </mapper>

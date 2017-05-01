@@ -14,4 +14,9 @@ public interface ForumDao {
     List<ForumTheme> getAllForumTheme();
     List<ForumContent> getAllForumContentByid(@Param("id") String id);
     ForumContent getLastForumCreatorByid(@Param("id") String id);
+    void saveForumTheme(ForumTheme forumTheme);
+    String existForumTheme(@Param("id") String id);
+    void saveForumContent(ForumContent forumContent);
+    String existForumContent(@Param("id") String id);
+    int findMaxForumContentOrderId(String id);
 }

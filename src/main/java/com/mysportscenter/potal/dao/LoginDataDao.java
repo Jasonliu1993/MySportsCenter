@@ -11,4 +11,5 @@ import org.springframework.stereotype.Component;
 public interface LoginDataDao {
     int getExistById(String id);
     LoginData getLoginDataByUsernameAndPassword(@Param("username") String username,@Param("password") String password);
+    void saveNewUser(LoginData loginData);
 }

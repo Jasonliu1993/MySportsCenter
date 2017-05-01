@@ -6,9 +6,13 @@ import com.mysportscenter.potal.entity.ForumTheme;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import com.mysportscenter.utilities.DateUtility;
+import com.mysportscenter.utilities.KeyValue;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Jason on 4/30/17.
@@ -36,6 +40,39 @@ public class ForumService {
 
     public List<ForumContent> getAllForumContentByid(String id) {
         return forumDao.getAllForumContentByid(id);
+    }
+
+    public void saveNewForum(String newForumThemeId, String theme, String contentArea, HttpSession session) {
+        String newForumContentId = KeyValue.getKeyValue();
+        String currentDateTime = DateUtility.getCurrentDate();
+        ForumTheme forumTheme = new ForumTheme();
+        ForumContent forumContent = new ForumContent();
+        forumTheme.setId(newForumThemeId);
+        forumTheme.setForumCreaterRefId((String)session.getAttribute("userName"));
+        forumTheme.setForumTheme(theme);
+        forumTheme.setPostDatetime(currentDateTime);
+        forumContent.setId(newForumContentId);
+        forumContent.setCreateUser((String)session.getAttribute("userName"));
+        forumContent.setForumContent(contentArea);
+        forumContent.setForumThemeId(newForumThemeId);
+        forumContent.setCreateDatetime(currentDateTime);
+        forumContent.setOrderId(1);
+        forumDao.saveForumTheme(forumTheme);
+        forumDao.saveForumContent(forumContent);
+    }
+
+    public void saveNewReply(String ForumThemeId, String contentArea, HttpSession session) {
+        String newForumContentId = KeyValue.getKeyValue();
+        String currentDateTime = DateUtility.getCurrentDate();
+        ForumContent forumContent = new ForumContent();
+        forumContent.setId(newForumContentId);
+        forumContent.setCreateUser((String)session.getAttribute("userName"));
+        forumContent.setForumContent(contentArea);
+        forumContent.setForumThemeId(ForumThemeId);
+        forumContent.setCreateDatetime(currentDateTime);
+        System.out.println("+++++" + forumDao.findMaxForumContentOrderId(ForumThemeId) + "++++");
+        forumContent.setOrderId(forumDao.findMaxForumContentOrderId(ForumThemeId) + 1);
+        forumDao.saveForumContent(forumContent);
     }
 
 }

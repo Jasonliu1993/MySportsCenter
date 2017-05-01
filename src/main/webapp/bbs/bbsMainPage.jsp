@@ -12,9 +12,6 @@
     <title>My Sports Center 论坛</title>
     <link rel="stylesheet" href="../css/common-core.css">
     <link rel="stylesheet" href="../css/bbs/bbsMainPage.css">
-    <style>
-
-    </style>
     <script src="../js/jquery-3.1.1.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -44,7 +41,7 @@
         </c:forEach>
     </ul>
 </div>
-<form action="/SendForum.do?action=postForum" method="post">
+<form action="/sendNewForum.do?action=postForum" method="post">
     <div class="inputArea">
         <div class="themeArea">
                 <span class="themeLabelArea">
@@ -56,7 +53,21 @@
         </div>
         <div class="contentArea">
             <span class="contentLabelArea"></span>
-            <textarea name="contentArea" id="contentArea" class="contentInputArea"></textarea>
+            <%--<textarea name="contentArea" id="contentArea" class="contentInputArea"></textarea>--%>
+            <div class="contentInputArea">
+                <c:if test="${!empty sessionScope.userName}">
+                    <div class="contentNotNoneInputArea">
+                        <textarea name="contentArea" id="contentArea" ></textarea>
+                    </div>
+                </c:if>
+                <c:if test="${empty sessionScope.userName}">
+                    <div class="contentNoneInputArea">
+                        请先登录:
+                        <a href="/login/login.jsp">登录</a>
+                        <a href="/login/register.html">注册</a>
+                    </div>
+                </c:if>
+            </div>
         </div>
         <div class="submitArea">
             <input type="submit" class="inputBottom" value="发表帖子">
