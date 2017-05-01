@@ -85,7 +85,11 @@
     padding-left: 133px;
     padding-top: 7px;
 }
-.submitArea button {
+.submitArea input[type = "submit"] {
     height: 30px;
     width: 50px;
+    border: 1px solid white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
