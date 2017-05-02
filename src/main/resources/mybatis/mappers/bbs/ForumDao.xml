@@ -4,7 +4,21 @@
 
 <mapper namespace="com.mysportscenter.potal.dao.ForumDao">
     <select id="getAllForumTheme" resultType="com.mysportscenter.potal.entity.ForumTheme">
-        SELECT * FROM FORUMTHEME ORDER BY POST_DATETIME DESC
+        SELECT A.*
+        FROM FORUMTHEME A INNER JOIN FORUMCONTENT B ON A.ID = B.FORUM_THEME_ID
+        WHERE ORDER_ID = (SELECT MAX(C.ORDER_ID)
+                          FROM FORUMCONTENT C
+                          WHERE B.FORUM_THEME_ID = C.FORUM_THEME_ID)
+        ORDER BY B.CREATE_DATETIME DESC;
+    </select>
+    <select id="getAllForumThemeByCurrentDateTime" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumTheme">
+        SELECT A.*
+        FROM FORUMTHEME A INNER JOIN FORUMCONTENT B ON A.ID = B.FORUM_THEME_ID
+        WHERE ORDER_ID = (SELECT MAX(C.ORDER_ID)
+                          FROM FORUMCONTENT C
+                          WHERE B.FORUM_THEME_ID = C.FORUM_THEME_ID)
+        AND B.CREATE_DATETIME > #{currentDateTime}
+        ORDER BY B.CREATE_DATETIME DESC;
     </select>
     <select id="getLastForumCreatorByid" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumContent">
         SELECT *
@@ -23,6 +37,9 @@
     </select>
     <select id="findMaxForumContentOrderId" parameterType="String" resultType="int">
         SELECT MAX(ORDER_ID) FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id}
+    </select>
+    <select id="existNewestForumContent" parameterType="String" resultType="String">
+        SELECT 'X' FROM FORUMCONTENT WHERE CREATE_DATETIME > #{currentDateTime} limit 1, 1
     </select>
     <update id="saveForumTheme" parameterType="com.mysportscenter.potal.entity.ForumTheme">
         INSERT INTO FORUMTHEME VALUES(#{id}, #{version}, #{forumTheme}, #{forumCreaterRefId}, #{postDatetime}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})

@@ -2,6 +2,19 @@
     margin: 10px auto;
 }
 
+.remindNewForum {
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #f2eee4;
+    text-align: center;
+    cursor: pointer;
+}
+
+.remindNewForum:hover{
+    background-color: #f3f4da;
+}
+
 .title span {
     padding-left: 300px;
 }
@@ -58,7 +71,7 @@
     text-decoration: none;
 }
 
-.mainList li .postArea  {
+.mainList li .postArea {
     display: inline-block;
     width: 99px;
     height: 48px;
@@ -71,7 +84,7 @@
     width: 99px;
     height: 24px;
     text-align: center;
-    line-height:25px;
+    line-height: 25px;
     float: left;
     font-size: 15px;
     font-weight: bold;
@@ -83,37 +96,39 @@
     width: 99px;
     height: 24px;
     text-align: center;
-    line-height:25px;
+    line-height: 25px;
     float: left;
     font-size: 9px;
     font-weight: bold;
     color: #4e4e4e;
 }
 
-.mainList li .replyArea  {
+.mainList li .replyArea {
     display: inline-block;
     width: 99px;
     height: 48px;
     text-align: center;
     float: left;
 }
+
 .mainList li .replyArea .replier {
     display: inline-block;
     width: 99px;
     height: 24px;
     text-align: center;
-    line-height:25px;
+    line-height: 25px;
     float: left;
     font-size: 15px;
     font-weight: bold;
     color: #4e4e4e;
 }
+
 .mainList li .replyArea .replyTime {
     display: inline-block;
     width: 99px;
     height: 24px;
     text-align: center;
-    line-height:25px;
+    line-height: 25px;
     float: left;
     font-size: 9px;
     font-weight: bold;
@@ -178,11 +193,13 @@
     margin-right: 65px;
     display: inline-block;
 }
-.inputArea .contentArea .contentInputArea .contentNotNoneInputArea{
+
+.inputArea .contentArea .contentInputArea .contentNotNoneInputArea {
     width: 100%;
     height: 100%;
 }
-.inputArea .contentArea .contentNotNoneInputArea #contentArea{
+
+.inputArea .contentArea .contentNotNoneInputArea #contentArea {
     width: 100%;
     height: 100%;
     resize: none;

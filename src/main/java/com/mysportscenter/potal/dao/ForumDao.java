@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public interface ForumDao {
     List<ForumTheme> getAllForumTheme();
+    List<ForumTheme> getAllForumThemeByCurrentDateTime(String currentDateTime);
     List<ForumContent> getAllForumContentByid(@Param("id") String id);
     ForumContent getLastForumCreatorByid(@Param("id") String id);
     void saveForumTheme(ForumTheme forumTheme);
@@ -19,4 +20,5 @@ public interface ForumDao {
     void saveForumContent(ForumContent forumContent);
     String existForumContent(@Param("id") String id);
     int findMaxForumContentOrderId(String id);
+    String existNewestForumContent(String currentDateTime);
 }

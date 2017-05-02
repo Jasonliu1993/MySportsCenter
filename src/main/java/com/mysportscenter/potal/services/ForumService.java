@@ -38,6 +38,22 @@ public class ForumService {
         return list;
     }
 
+    public List<ForumTheme> getAllForumThemeByCurrentDateTime(String currentDateTime) {
+        List<ForumTheme> list = new LinkedList<ForumTheme>();
+        for (ForumTheme forumTheme : forumDao.getAllForumThemeByCurrentDateTime(currentDateTime)) {
+            /***
+             * 设置最后更新人
+             */
+            forumTheme.setCustom1((forumDao.getLastForumCreatorByid(forumTheme.getId())).getCreateUser());
+            /***
+             * 设置最后更新时间
+             */
+            forumTheme.setCustom2((forumDao.getLastForumCreatorByid(forumTheme.getId())).getCreateDatetime());
+            list.add(forumTheme);
+        }
+        return list;
+    }
+
     public List<ForumContent> getAllForumContentByid(String id) {
         return forumDao.getAllForumContentByid(id);
     }
@@ -73,6 +89,10 @@ public class ForumService {
         System.out.println("+++++" + forumDao.findMaxForumContentOrderId(ForumThemeId) + "++++");
         forumContent.setOrderId(forumDao.findMaxForumContentOrderId(ForumThemeId) + 1);
         forumDao.saveForumContent(forumContent);
+    }
+
+    public String existNewestForumContent(String currentDateTime) {
+        return forumDao.existNewestForumContent(currentDateTime);
     }
 
 }
