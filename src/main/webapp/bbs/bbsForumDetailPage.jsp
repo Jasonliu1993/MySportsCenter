@@ -40,6 +40,9 @@
         </c:forEach>
     </ul>
 </div>
+<%--插入分页导航条 开始--%>
+<%@include file="../common-page/pagePilot.jsp" %>
+<%--插入分页导航条 结束--%>
 <div class="inputArea">
     <form action="/sendNewForumContenr.do" method="post">
         <div class="contentArea">

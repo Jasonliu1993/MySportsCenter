@@ -2,6 +2,7 @@ package com.mysportscenter.potal.controllers;
 
 import com.mysportscenter.potal.entity.LoginData;
 import com.mysportscenter.potal.services.LoginDataService;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpSession;
  * Created by Jason on 4/26/17.
  */
 @Controller
+@Scope("prototype")
 public class LoginController {
     @Resource
     LoginDataService loginDataService;

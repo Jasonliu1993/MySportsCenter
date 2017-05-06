@@ -3,6 +3,7 @@ package com.mysportscenter.potal.controllers;
 import com.mysportscenter.potal.entity.ForumTheme;
 import com.mysportscenter.potal.services.ForumService;
 import com.mysportscenter.utilities.DateUtility;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import java.util.List;
  * Created by Jason on 4/23/17.
  */
 @Controller
+@Scope("prototype")
 public class ForumMainController {
 
     @Resource
