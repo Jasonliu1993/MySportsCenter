@@ -27,7 +27,7 @@
         AND ORDER_ID = (SELECT MAX(B.ORDER_ID) FROM FORUMCONTENT B WHERE A.FORUM_THEME_ID = B.FORUM_THEME_ID)
     </select>
     <select id="getAllForumContentByid" parameterType="String" resultType="com.mysportscenter.potal.entity.ForumContent">
-        SELECT * FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id} ORDER BY CREATE_DATETIME DESC,ORDER_ID DESC
+        SELECT * FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id} ORDER BY CREATE_DATETIME, ORDER_ID
     </select>
     <select id="existForumTheme" parameterType="String" resultType="String">
         SELECT 'X' FROM FORUMTHEME A WHERE ID = #{id}
@@ -39,12 +39,25 @@
         SELECT MAX(ORDER_ID) FROM FORUMCONTENT A WHERE FORUM_THEME_ID = #{id}
     </select>
     <select id="existNewestForumContent" parameterType="String" resultType="String">
-        SELECT 'X' FROM FORUMCONTENT WHERE CREATE_DATETIME > #{currentDateTime} limit 1, 1
+        SELECT 'X' FROM FORUMCONTENT WHERE CREATE_DATETIME > #{currentDateTime} LIMIT 1, 1
     </select>
-    <update id="saveForumTheme" parameterType="com.mysportscenter.potal.entity.ForumTheme">
+
+    <select id="getCountForumContentByThemeId" parameterType="String" resultType="int">
+        SELECT CASE WHEN MOD(COUNT(*) , 10) = 0 THEN
+          COUNT(*) / 10
+          ELSE FLOOR(COUNT(*) / 10) + 1
+          END
+        FROM FORUMCONTENT
+        WHERE FORUM_THEME_ID = #{id}
+    </select>
+    <select id="getForumContentByThemeId"  resultType="com.mysportscenter.potal.entity.ForumContent">
+        SELECT * FROM FORUMCONTENT WHERE FORUM_THEME_ID = #{0} ORDER BY CREATE_DATETIME LIMIT #{1}, 10
+    </select>
+
+    <insert id="saveForumTheme" parameterType="com.mysportscenter.potal.entity.ForumTheme">
         INSERT INTO FORUMTHEME VALUES(#{id}, #{version}, #{forumTheme}, #{forumCreaterRefId}, #{postDatetime}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
-    </update>
-    <update id="saveForumContent" parameterType="com.mysportscenter.potal.entity.ForumContent">
+    </insert>
+    <insert id="saveForumContent" parameterType="com.mysportscenter.potal.entity.ForumContent">
         INSERT INTO FORUMCONTENT VALUES(#{id}, #{version}, #{orderId}, #{forumContent}, #{createDatetime}, #{createUser}, #{forumThemeId}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
-    </update>
+    </insert>
 </mapper>

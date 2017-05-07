@@ -25,3 +25,8 @@ function currentDateTime() {
     var now =year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m)+":"+p(s);
     return now;
 }
+
+$.setPagePilot = function (currentPageNumber, totalPageNumber) {
+    $(".pagePilotDetial").find("a:contains(" + currentPageNumber + ")").addClass("display-page");
+    $(".pagePilotDetial").find("a:contains(" + totalPageNumber + ")").nextUntil("input").attr('href', 'JavaScript:');
+}

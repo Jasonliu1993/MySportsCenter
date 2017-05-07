@@ -21,7 +21,6 @@ import java.util.List;
  * Created by Jason on 4/23/17.
  */
 @Controller
-@Scope("prototype")
 public class ForumMainController {
 
     @Resource
@@ -35,8 +34,12 @@ public class ForumMainController {
     }
 
     @RequestMapping("forumDetail.do")
-    public String ForumDetailPage(ModelMap modelMap,@RequestParam("Id") String id) {
-        modelMap.addAttribute("ForumContent", forumService.getAllForumContentByid(id));
+    public String ForumDetailPage(@RequestParam("Id") String id, String page,ModelMap modelMap) {
+        System.out.println("++++++" + page + "+++++++");
+        modelMap.addAttribute("ForumContent", forumService.getForumContentByThemeId(id,Integer.parseInt(page)));
+        modelMap.addAttribute("totalPageNumber", forumService.getCountForumContentByThemeId(id));
+        modelMap.addAttribute("currentPageNumber", page);
+        modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(id,Integer.parseInt(page)));
         return "/bbs/bbsForumDetailPage.jsp";
     }
 

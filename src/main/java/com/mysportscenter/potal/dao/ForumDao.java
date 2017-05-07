@@ -2,6 +2,8 @@ package com.mysportscenter.potal.dao;
 
 import com.mysportscenter.potal.entity.ForumContent;
 import com.mysportscenter.potal.entity.ForumTheme;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
@@ -21,4 +23,6 @@ public interface ForumDao {
     String existForumContent(@Param("id") String id);
     int findMaxForumContentOrderId(String id);
     String existNewestForumContent(String currentDateTime);
+    int getCountForumContentByThemeId(@Param("id") String id);
+    List<ForumContent> getForumContentByThemeId(String id,int currentPageNumber);
 }

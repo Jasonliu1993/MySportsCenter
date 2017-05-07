@@ -106,7 +106,7 @@
             <li>
                 <span class="forumTheme">
                     <%--<a href="/SendForumController?type=n&page=0&themeID=<%=forumTheme.getID()%>"><%=forumTheme.getForumTheme()%></a>--%>
-                    <a href="/forumDetail.do?Id=${items.id}">${items.forumTheme}</a>
+                    <a href="/forumDetail.do?Id=${items.id}&page=1">${items.forumTheme}</a>
                 </span>
                 <span class="postArea">
                     <span class="poster">${items.forumCreaterRefId}</span>

@@ -141,7 +141,7 @@ a:visited {
 }
 
 .pagePilot .pagePilotDetial {
-    width: 375px;
+    /*width: 400px;*/
     height: 26px;
     float: right;
     line-height: 15px;
@@ -170,7 +170,7 @@ a:visited {
 }
 
 .pagePilot .pagePilotDetial input[id="pageNumber"] {
-    width: 24px;
+    width: 30px;
     height: 24px;
     margin-left: 10px;
     border: 1px solid #e5e5e5;

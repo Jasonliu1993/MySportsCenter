@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="../css/common-core.css">
     <link rel="stylesheet" href="../css/bbs/bbsForumDetailPage.css">
     <script type="text/JavaScript" charset="utf-8" src="/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/core-js.js" ></script>
     <script charset="utf-8">
         $(document).ready(function () {
             $("li[name='Navi6']").css("background-color", "#abe3e5");
+            $.setPagePilot(${currentPageNumber},${totalPageNumber});
         });
     </script>
 </head>
