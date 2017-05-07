@@ -18,6 +18,7 @@
         /*页面初始化*/
         $(document).ready(function () {
             $("li[name='Navi6']").css("background-color", "#abe3e5");
+            $.setPagePilot(${currentPageNumber},${totalPageNumber});
         });
 
         /*获取是否有新帖子*/
@@ -120,6 +121,7 @@
         </c:forEach>
     </ul>
 </div>
+<%@include file="../common-page/pagePilot.jsp" %>
 <form action="/sendNewForum.do?action=postForum" method="post">
     <div class="inputArea">
         <div class="themeArea">

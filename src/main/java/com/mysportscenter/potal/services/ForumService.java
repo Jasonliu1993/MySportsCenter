@@ -102,32 +102,52 @@ public class ForumService {
         return forumDao.getForumContentByThemeId(id,(currentPageNumber - 1) * 10);
     }
 
-    public Map<String, String> getPagePilotUrl(String id, int currentPageNumber) {
+    public int getCountForumThemeByPilot() {
+        return forumDao.getCountForumThemeByPilot();
+    }
+
+    public List<ForumTheme> getForumThemeByPilot(int currentPageNumber) {
+        List<ForumTheme> list = new LinkedList<ForumTheme>();
+        for (ForumTheme forumTheme : forumDao.getForumThemeByPilot((currentPageNumber - 1) * 10)) {
+            /***
+             * 设置最后更新人
+             */
+            forumTheme.setCustom1((forumDao.getLastForumCreatorByid(forumTheme.getId())).getCreateUser());
+            /***
+             * 设置最后更新时间
+             */
+            forumTheme.setCustom2((forumDao.getLastForumCreatorByid(forumTheme.getId())).getCreateDatetime());
+            list.add(forumTheme);
+        }
+        return list;
+    }
+
+    public Map<String, String> getPagePilotUrl(int currentPageNumber, int totalPageNumber, String link) {
         LinkedHashMap<String, String> hashMap = new LinkedHashMap<String, String>();
-        if (forumDao.getCountForumContentByThemeId(id) <= 7){
-            for (int i = 1;i <= forumDao.getCountForumContentByThemeId(id); i++) {
-                hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(i),Integer.toString(i) );
+        if (totalPageNumber <= 7){
+            for (int i = 1;i <= totalPageNumber; i++) {
+                hashMap.put("/" + link + "page=" + Integer.toString(i),Integer.toString(i) );
             }
         }else {
-            if (currentPageNumber > 4 && (forumDao.getCountForumContentByThemeId(id) - currentPageNumber) > 3 ) {
-                hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(currentPageNumber - 3),"..." );
+            if (currentPageNumber > 4 && (totalPageNumber - currentPageNumber) > 3 ) {
+                hashMap.put("/" + link + "page=" + Integer.toString(currentPageNumber - 3),"..." );
 
                 for (int i = (currentPageNumber - 2 ); i <= (currentPageNumber + 2 ); i++) {
-                    hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(i),Integer.toString(i) );
+                    hashMap.put("/" + link + "page=" + Integer.toString(i),Integer.toString(i) );
                 }
 
-                hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(currentPageNumber + 3),"..." );
-            }else if ((forumDao.getCountForumContentByThemeId(id) - currentPageNumber) <= 3) {
-                hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(currentPageNumber - 6),"..." );
+                hashMap.put("/" + link + "page=" + Integer.toString(currentPageNumber + 3),"..." );
+            }else if ((totalPageNumber - currentPageNumber) <= 3) {
+                hashMap.put("/" + link + "page=" + Integer.toString(currentPageNumber - 6),"..." );
 
-                for (int i = (forumDao.getCountForumContentByThemeId(id) - 5 ); i <= forumDao.getCountForumContentByThemeId(id); i++) {
-                    hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(i),Integer.toString(i) );
+                for (int i = (totalPageNumber - 5 ); i <= totalPageNumber; i++) {
+                    hashMap.put("/" + link + "page=" + Integer.toString(i),Integer.toString(i) );
                 }
             }else if (currentPageNumber <= 4) {
                 for (int i = 1; i <= 6; i++) {
-                    hashMap.put("/forumDetail.do?Id=" + id + "&page=" + Integer.toString(i),Integer.toString(i) );
+                    hashMap.put("/" + link + "page=" + Integer.toString(i),Integer.toString(i) );
                 }
-                hashMap.put("/forumDetail.do?Id=" + id + "&page=7","..." );
+                hashMap.put("/" + link + "page=7","..." );
                 System.out.println(hashMap);
             }
         }

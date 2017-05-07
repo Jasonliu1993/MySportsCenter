@@ -25,4 +25,6 @@ public interface ForumDao {
     String existNewestForumContent(String currentDateTime);
     int getCountForumContentByThemeId(@Param("id") String id);
     List<ForumContent> getForumContentByThemeId(String id,int currentPageNumber);
+    List<ForumTheme> getForumThemeByPilot(int currentPageNumber);
+    int getCountForumThemeByPilot();
 }

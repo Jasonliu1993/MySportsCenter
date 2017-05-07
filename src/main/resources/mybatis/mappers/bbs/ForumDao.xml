@@ -50,6 +50,17 @@
         FROM FORUMCONTENT
         WHERE FORUM_THEME_ID = #{id}
     </select>
+    <select id="getCountForumThemeByPilot" resultType="int">
+        SELECT CASE WHEN MOD(COUNT(*) , 10) = 0 THEN
+        COUNT(*) / 10
+        ELSE FLOOR(COUNT(*) / 10) + 1
+        END
+        FROM FORUMTHEME
+    </select>
+
+    <select id="getForumThemeByPilot" parameterType="int" resultType="com.mysportscenter.potal.entity.ForumTheme">
+        SELECT * FROM FORUMTHEME ORDER BY POST_DATETIME DESC LIMIT #{currentPageNumber}, 10
+    </select>
     <select id="getForumContentByThemeId"  resultType="com.mysportscenter.potal.entity.ForumContent">
         SELECT * FROM FORUMCONTENT WHERE FORUM_THEME_ID = #{0} ORDER BY CREATE_DATETIME LIMIT #{1}, 10
     </select>

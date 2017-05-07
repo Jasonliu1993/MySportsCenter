@@ -27,9 +27,12 @@ public class ForumMainController {
     ForumService forumService;
 
     @RequestMapping("forumMain.do")
-    public String ForumMainPage(ModelMap modelMap) {
-        modelMap.addAttribute("ForumTheme", forumService.getAllForumTheme());
+    public String ForumMainPage(String page,ModelMap modelMap) {
+        modelMap.addAttribute("ForumTheme", forumService.getForumThemeByPilot(Integer.parseInt(page)));
         modelMap.addAttribute("visitTime", DateUtility.getCurrentDate());
+        modelMap.addAttribute("totalPageNumber", forumService.getCountForumThemeByPilot());
+        modelMap.addAttribute("currentPageNumber", page);
+        modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(Integer.parseInt(page),forumService.getCountForumThemeByPilot(),"forumMain.do?"));
         return "/bbs/bbsMainPage.jsp";
     }
 
@@ -39,7 +42,7 @@ public class ForumMainController {
         modelMap.addAttribute("ForumContent", forumService.getForumContentByThemeId(id,Integer.parseInt(page)));
         modelMap.addAttribute("totalPageNumber", forumService.getCountForumContentByThemeId(id));
         modelMap.addAttribute("currentPageNumber", page);
-        modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(id,Integer.parseInt(page)));
+        modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(Integer.parseInt(page),forumService.getCountForumContentByThemeId(id),"forumDetail.do?Id=" + id + "&"));
         return "/bbs/bbsForumDetailPage.jsp";
     }
 
