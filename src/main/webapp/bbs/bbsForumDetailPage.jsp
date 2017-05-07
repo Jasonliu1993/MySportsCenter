@@ -31,6 +31,7 @@
                 <%--<input type="hidden" id="forumContentID" value="123">--%>
                 <span class="info">${items.createUser}</span>
                 <span class="forumContent">
+                    <div class="ForumContentComments">${items.orderId}楼</div>
                     <div class="mainForumContent">
                         ${items.forumContent}
                     </div>
