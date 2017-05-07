@@ -12,6 +12,7 @@
     <title>My Sports Center 论坛</title>
     <link rel="stylesheet" href="../css/common-core.css">
     <link rel="stylesheet" href="../css/bbs/bbsForumDetailPage.css">
+    <link rel="stylesheet" href="../css/bbs/pop-reply.css">
     <script type="text/JavaScript" charset="utf-8" src="/js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="/js/core-js.js" ></script>
     <script charset="utf-8">
@@ -40,6 +41,26 @@
                 </span>
             </li>
         </c:forEach>
+        <script>
+            $("a[class='reply']").on("click",function(){
+                $(this).parent().append('<div class="popReply">' +
+                        '<div class="replyTitle">' +
+                        '<h3>回复主题</h3>' +
+                        '<span class="shutButton">X</span>' +
+                        '</div>' +
+                        '<div class="replyTheme">RE:test</div>' +
+                        '<div class="replyContentArea">' +
+                        '<textarea name="replyContent" id="replyContent">test</textarea>' +
+                        '</div>' +
+                        '<div class="replySubmit">' +
+                        '<button class="submitButton">回复</button>' +
+                        '</div>' +
+                        '</div>')
+            });
+            $(".forumContent").delegate(".popReply .replyTitle .shutButton","click",function () {
+                $(this).parent().parent().remove(".popReply")
+            });
+        </script>
     </ul>
 </div>
 <%--插入分页导航条 开始--%>

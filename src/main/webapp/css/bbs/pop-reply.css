@@ -1,0 +1,66 @@
+.popReply {
+    width: 500px;
+    height: 300px;
+    position: fixed;
+    z-index: 999;
+    background-color: #d5d7d7;
+    left: 33%;
+    top: 22%;
+    border: 1px solid #555555;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px #555555;
+}
+.popReply .replyTitle {
+    width: 500px;
+    height: 60px;
+}
+.popReply .replyTitle h3 {
+    width: 450px;
+    height: 60px;
+    line-height: 60px;
+    color: #236ddc;
+    padding-left: 15px;
+    display: inline-block;
+    float: left;
+}
+.popReply .replyTitle .shutButton {
+    width: 10px;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+}
+.popReply .replyTheme {
+    width: 500px;
+    height: 30px;
+    font-size: 20px;
+    padding-left: 15px;
+    line-height: 30px;
+}
+.popReply .replyContentArea {
+    width: 470px;
+    height: 170px;
+    margin: 0 auto;
+}
+.popReply .replyContentArea textarea{
+    width: 470px;
+    height: 170px;
+    resize: none;
+}
+.popReply .replySubmit {
+    margin: 5px auto;
+    width: 500px;
+    height: 30px;
+}
+.popReply .replySubmit .submitButton{
+    margin-top: 2px;
+    margin-left: 15px;
+    width: 50px;
+    height: 25px;
+    background-color: #3e99ef;
+    border: 1px solid #3e99ef;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+}
