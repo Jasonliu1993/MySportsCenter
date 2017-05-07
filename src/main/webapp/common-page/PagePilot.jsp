@@ -15,4 +15,15 @@
         <input type="text" name="pageNumber" id="pageNumber"/>
         <span> / ${totalPageNumber} 页 </span>
     </div>
+    <script>
+        $("#pageNumber").on("keypress",function (event) {
+            if(event.keyCode==13) {
+                if (this.value <= ${totalPageNumber}) {
+                    window.location='/forumDetail.do?Id=${ForumContent[0].forumThemeId}&page='+this.value;
+                } else {
+                    alert("不能大于总页数");
+                }
+            }
+        })
+    </script>
 </div>

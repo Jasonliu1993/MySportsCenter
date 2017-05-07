@@ -67,6 +67,7 @@
         </div>
         <div class="submitArea">
             <input type="hidden" id = "forumTheme" name = "forumTheme" value="${ForumContent[0].forumThemeId}">
+            <input type="hidden" id = "currentPage" name = "currentPage" value="${currentPageNumber}">
             <input type="submit" class="inputBottom" value="回复"/>
         </div>
     </form>

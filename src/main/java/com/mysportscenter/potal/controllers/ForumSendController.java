@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -25,12 +24,12 @@ public class ForumSendController {
     public String sendNewForum(String theme, String contentArea, HttpSession session) {
         String newForumThemeId = KeyValue.getKeyValue();
         forumService.saveNewForum(newForumThemeId, theme, contentArea, session);
-        return "redirect:/forumDetail.do?Id=" + newForumThemeId;
+        return "redirect:/forumDetail.do?Id=" + newForumThemeId + "&page=1";
     }
 
     @RequestMapping(value = "/sendNewForumContenr.do", method = RequestMethod.POST)
-    public String sendNewForumContenr(String forumTheme, String contentArea, HttpSession session) {
+    public String sendNewForumContenr(String forumTheme, String contentArea, String currentPage, HttpSession session) {
         forumService.saveNewReply(forumTheme, EscapeWord.getEscaping(contentArea), session);
-        return "redirect:/forumDetail.do?Id=" + forumTheme;
+        return "redirect:/forumDetail.do?Id=" + forumTheme + "&page=" + forumService.getCountForumContentByThemeId(forumTheme);
     }
 }
