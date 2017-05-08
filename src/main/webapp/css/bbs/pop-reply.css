@@ -26,10 +26,38 @@
 .popReply .replyTitle .shutButton {
     width: 10px;
     height: 60px;
-    line-height: 60px;
-    display: inline-block;
     float: left;
     cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.popReply .replyTitle .shutButton:hover::before,.popReply .replyTitle .shutButton:hover::after {
+    background: #1ebcc5;
+}
+.popReply .replyTitle .shutButton::before, .popReply .replyTitle .shutButton::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+}
+.popReply .replyTitle .shutButton::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.popReply .replyTitle .shutButton::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 .popReply .replyTheme {
     width: 500px;

@@ -47,7 +47,7 @@
                 $(this).parent().append('<div class="popReply">' +
                         '<div class="replyTitle">' +
                         '<h3>回复主题</h3>' +
-                        '<span class="shutButton">X</span>' +
+                        '<span class="shutButton"></span>' +
                         '</div>' +
                         '<div class="replyTheme">RE:test</div>' +
                         '<div class="replyContentArea">' +
