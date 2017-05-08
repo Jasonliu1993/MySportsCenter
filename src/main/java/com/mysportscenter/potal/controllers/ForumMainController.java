@@ -32,6 +32,7 @@ public class ForumMainController {
         modelMap.addAttribute("totalPageNumber", forumService.getCountForumThemeByPilot());
         modelMap.addAttribute("currentPageNumber", page);
         modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(Integer.parseInt(page),forumService.getCountForumThemeByPilot(),"forumMain.do?"));
+        modelMap.addAttribute("control","forumMain");
         return "/bbs/bbsMainPage.jsp";
     }
 
@@ -42,6 +43,7 @@ public class ForumMainController {
         modelMap.addAttribute("totalPageNumber", forumService.getCountForumContentByThemeId(id));
         modelMap.addAttribute("currentPageNumber", page);
         modelMap.addAttribute("pagePilotUrl", forumService.getPagePilotUrl(Integer.parseInt(page),forumService.getCountForumContentByThemeId(id),"forumDetail.do?Id=" + id + "&"));
+        modelMap.addAttribute("control","forumDetail");
         return "/bbs/bbsForumDetailPage.jsp";
     }
 

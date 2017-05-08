@@ -45,21 +45,40 @@
         <script>
             $("a[class='reply']").on("click",function(){
                 $(this).parent().append('<div class="popReply">' +
+                        '<form action="/sendNewForumContenrByReply.do" method="post" id="ReplyInputForm">' +
                         '<div class="replyTitle">' +
                         '<h3>回复主题</h3>' +
                         '<span class="shutButton"></span>' +
                         '</div>' +
-                        '<div class="replyTheme">RE:test</div>' +
+                        '<div class="replyTheme"></div>' +
                         '<div class="replyContentArea">' +
-                        '<textarea name="replyContent" id="replyContent">test</textarea>' +
+                        '<textarea name="replyContent" id="replyContent"></textarea>' +
                         '</div>' +
                         '<div class="replySubmit">' +
+                        '<input type="hidden" id = "forumThemeByReply" name = "forumThemeByReply" value="" />' +
+                        '<input type="hidden" id = "currentPageByReply" name = "currentPageByReply" value="" />' +
                         '<button class="submitButton">回复</button>' +
-                        '</div>' +
-                        '</div>')
+                        '</div></form>' +
+                        '</div>');
+
+                var content = $(this).parent().prev(".mainForumContent").text().trim();
+                if (content.length > 20) {
+                    content = content.substr(0,20) + "...";
+                }
+                $(".replyTheme").text("RE:" + content);
             });
             $(".forumContent").delegate(".popReply .replyTitle .shutButton","click",function () {
-                $(this).parent().parent().remove(".popReply")
+                $(this).parent().parent().parent().remove(".popReply")
+            });
+            $(".forumContent").delegate(".popReply .replySubmit .submitButton","click",function () {
+                var content = "{[" + $(".replyTheme").text().trim() + "]}" + "{br}" +$("textarea[name='replyContent']").val();
+                $("textarea[name='replyContent']").val(content);
+                $("input[name='forumThemeByReply']").val($("input[name='forumTheme']").val());
+                $("input[name='currentPageByReply']").val($("input[name='currentPage']").val());
+                conLog(content);
+                conLog($("input[name='forumTheme']").val());
+                conLog($("input[name='currentPage']").val());
+                $("#ReplyInputForm").submit();
             });
         </script>
     </ul>

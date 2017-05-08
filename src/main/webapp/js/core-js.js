@@ -30,3 +30,7 @@ $.setPagePilot = function (currentPageNumber, totalPageNumber) {
     $(".pagePilotDetial").find("a:contains(" + currentPageNumber + ")").addClass("display-page");
     $(".pagePilotDetial").find("a:contains(" + totalPageNumber + ")").nextUntil("input").attr('href', 'JavaScript:');
 }
+
+function conLog (content) {
+    console.log(content);
+}

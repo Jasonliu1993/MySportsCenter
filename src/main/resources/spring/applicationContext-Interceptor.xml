@@ -19,6 +19,7 @@
                     <list>
                         <value>sendNewForum.do</value>
                         <value>sendNewForumContenr.do</value>
+                        <value>sendNewForumContenrByReply.do</value>
                     </list>
                 </property>
             </bean>

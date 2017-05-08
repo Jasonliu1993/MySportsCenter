@@ -32,4 +32,14 @@ public class ForumSendController {
         forumService.saveNewReply(forumTheme, EscapeWord.getEscaping(contentArea), session);
         return "redirect:/forumDetail.do?Id=" + forumTheme + "&page=" + forumService.getCountForumContentByThemeId(forumTheme);
     }
+
+    @RequestMapping(value = "/sendNewForumContenrByReply.do", method = RequestMethod.POST)
+    public String sendNewForumContentByReply(String forumThemeByReply, String replyContent, String currentPageByReply, HttpSession session) {
+        System.out.println("+++++++++" + forumThemeByReply + "++++++++++++");
+        System.out.println("+++++++++" + replyContent + "++++++++++++");
+        System.out.println("+++++++++" + currentPageByReply + "++++++++++++");
+
+        forumService.saveNewReply(forumThemeByReply, EscapeWord.getEscaping(replyContent), session);
+        return "redirect:/forumDetail.do?Id=" + forumThemeByReply + "&page=" + forumService.getCountForumContentByThemeId(forumThemeByReply);
+    }
 }

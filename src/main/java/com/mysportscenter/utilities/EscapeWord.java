@@ -6,7 +6,7 @@ package com.mysportscenter.utilities;
 public class EscapeWord {
     public static String getEscaping(String input) {
         String output = null;
-        output = input.replace("<","&lt;");
+        output = input.replace("<","&lt;").replace("{[","<strong>").replace("]}","</strong>").replace("{","<").replace("}",">");
         return output;
     }
 }
