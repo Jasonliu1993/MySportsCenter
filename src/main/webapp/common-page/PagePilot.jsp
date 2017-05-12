@@ -14,12 +14,19 @@
         <%--<a href="#" id="pilot4" class="display-page-number display-page">4</a>--%>
         <input type="text" name="pageNumber" id="pageNumber"/>
         <span> / ${totalPageNumber} 页 </span>
+        <input type="hidden" name="control" id="control" value="${control}" />
     </div>
     <script>
         $("#pageNumber").on("keypress",function (event) {
             if(event.keyCode==13) {
                 if (this.value <= ${totalPageNumber}) {
-                    window.location='/forumDetail.do?Id=${ForumContent[0].forumThemeId}&page='+this.value;
+                    var ctrl = $("input[name='control']").val()
+                    if (ctrl == "forumDetail") {
+                        window.location='/forumDetail.do?Id=${ForumContent[0].forumThemeId}&page='+this.value;
+                    }
+                    if (ctrl == "forumMain") {
+                        window.location='/forumMain.do?page='+this.value;
+                    }
                 } else {
                     alert("不能大于总页数");
                 }
