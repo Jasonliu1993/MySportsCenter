@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -24,13 +23,16 @@ public class AdminController {
     AdminService adminService;
 
     @RequestMapping("/avatar.do")
-    public String avatar () {
-        return "/admin/personalPage.jsp";
+    public String avatar (HttpSession httpSession,ModelMap modelMap) {
+        modelMap.addAttribute("avatarSrc",adminService.getAvatarByUser((String)httpSession.getAttribute("userName")));
+        modelMap.addAttribute("pageFlag","avatar");
+        modelMap.addAttribute("adminConf",adminService.getLeftNav());
+        return "/admin/adminMainpage.jsp";
     }
 
     @RequestMapping(value = "/saveAvatar.do", method = RequestMethod.POST)
     public String saveAvatar (@RequestParam("avatar") MultipartFile file, HttpServletRequest httpServletRequest, HttpSession httpSession, ModelMap modelMap) {
         adminService.saveAvatar(file, httpSession, httpServletRequest);
-        return "/admin/personalPage.jsp";
+        return "/admin/avatar.do";
     }
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mysportscenter.potal.dao.AdminConfDao">
+    <select id="getAdminConf_F" resultType="com.mysportscenter.potal.entity.AdminConf_F">
+        SELECT * FROM ADMINCONF_F ORDER BY ORDER_ID
+    </select>
+    <select id="getAdminConf_FByFirstId" parameterType="String" resultType="com.mysportscenter.potal.entity.AdminConf_S">
+        SELECT * FROM ADMINCONF_S WHERE REF_KEY_FIRST = #{F_Id} ORDER BY ORDER_ID
+    </select>
+</mapper>
