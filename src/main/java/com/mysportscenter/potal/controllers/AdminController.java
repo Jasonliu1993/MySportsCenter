@@ -11,6 +11,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Jason on 5/14/17.
@@ -28,8 +29,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = "/saveAvatar.do", method = RequestMethod.POST)
-    public String saveAvatar (@RequestParam("avatar") MultipartFile file, HttpServletRequest httpServletRequest, ModelMap modelMap) {
-        adminService.saveAvatar(file,httpServletRequest);
+    public String saveAvatar (@RequestParam("avatar") MultipartFile file, HttpServletRequest httpServletRequest, HttpSession httpSession, ModelMap modelMap) {
+        adminService.saveAvatar(file, httpSession, httpServletRequest);
         return "/admin/personalPage.jsp";
     }
 }
