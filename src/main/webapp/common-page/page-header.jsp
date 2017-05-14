@@ -15,8 +15,8 @@
         </c:if>
         <c:if test="${!empty sessionScope.userName}">
             <span class="static">${sessionScope.userName},欢迎回来!</span>
-            <%--<span class="LoginButton"><a href="/login/login.jsp">登录</a></span>
-            <span class="registerButton"><a href="/login/register.html">注册</a></span>--%>
+            <%--<span class="LoginButton"><a href="/login/login.jsp">登录</a></span>--%>
+            <span class="static"><a href="/admin/avatar.do">我的空间</a></span>
         </c:if>
     </div>
 </div>
