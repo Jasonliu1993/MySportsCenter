@@ -30,7 +30,8 @@ public class AdminService {
         System.out.println("开始");
 
         if (avatarDao.getCountAvatarByUser((String)httpSession.getAttribute("userName")) == 0) {
-            String path = httpServletRequest.getRealPath("uploadFiles");
+//            String path = httpServletRequest.getSession().getServletContext().getRealPath("uploadFiles");
+            String path = "/Users/Jason/Desktop";
             String key = KeyValue.getKeyValue();
             Avatar avatar = new Avatar();
             avatar.setId(key);
@@ -48,6 +49,20 @@ public class AdminService {
                 e.printStackTrace();
             }
 
+        } else {
+            String path = "/Users/Jason/Desktop";
+            HandleFile.deleteFile(avatarDao.getAvatarByUser((String)httpSession.getAttribute("userName")).getAvatarPath());
+            Avatar avatar = avatarDao.getAvatarByUser((String)httpSession.getAttribute("userName"));
+            avatar.setAvatarPath(path + "/" + avatar.getId() + ".jpg");
+            avatar.setCreateDatetime(DateUtility.getCurrentDate());
+            File targetFile = HandleFile.createFile(path, avatar.getId() + ".jpg");
+            //保存
+            try {
+                file.transferTo(targetFile);
+                avatarDao.updateAvatarById(avatar);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
 
