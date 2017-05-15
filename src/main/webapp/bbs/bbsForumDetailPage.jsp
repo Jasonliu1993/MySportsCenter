@@ -14,26 +14,32 @@
     <link rel="stylesheet" href="../css/bbs/bbsForumDetailPage.css">
     <link rel="stylesheet" href="../css/bbs/pop-reply.css">
     <script type="text/JavaScript" charset="utf-8" src="/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/js/core-js.js" ></script>
+    <script type="text/javascript" charset="utf-8" src="/js/core-js.js"></script>
     <script charset="utf-8">
         $(document).ready(function () {
             $("li[name='Navi6']").css("background-color", "#abe3e5");
-            $.setPagePilot(${currentPageNumber},${totalPageNumber});
+            $.setPagePilot(${currentPageNumber}, ${totalPageNumber});
         });
     </script>
+    <style>
+
+    </style>
 </head>
 <body style="background-color: #d5d5d5">
 <%@include file="../common-page/page-header.jsp" %>
 <div class="content">
     <ul class="mainList">
-        <c:forEach items="${ForumContent}" varStatus="i" var="items" >
+        <c:forEach items="${ForumContent}" varStatus="i" var="items">
             <li>
-                <%--<input type="hidden" id="forumContentID" value="123">--%>
-                <span class="info">${items.createUser}</span>
+                    <%--<input type="hidden" id="forumContentID" value="123">--%>
+                <span class="info">
+                    <img src="${items.custom1}" alt="${items.createUser}">
+                    <span class="infoName">${items.createUser}</span>
+                </span>
                 <span class="forumContent">
                     <div class="ForumContentComments">${items.orderId}楼</div>
                     <div class="mainForumContent">
-                        ${items.forumContent}
+                            ${items.forumContent}
                     </div>
                     <div class="replyForum">
                         <span class="datetime">${items.createDatetime}</span>
@@ -43,7 +49,7 @@
             </li>
         </c:forEach>
         <script>
-            $("a[class='reply']").on("click",function(){
+            $("a[class='reply']").on("click", function () {
                 $(this).parent().append('<div class="popReply">' +
                         '<form action="/sendNewForumContenrByReply.do" method="post" id="ReplyInputForm">' +
                         '<div class="replyTitle">' +
@@ -63,15 +69,15 @@
 
                 var content = $(this).parent().prev(".mainForumContent").text().trim();
                 if (content.length > 20) {
-                    content = content.substr(0,20) + "...";
+                    content = content.substr(0, 20) + "...";
                 }
                 $(".replyTheme").text("RE:" + content);
             });
-            $(".forumContent").delegate(".popReply .replyTitle .shutButton","click",function () {
+            $(".forumContent").delegate(".popReply .replyTitle .shutButton", "click", function () {
                 $(this).parent().parent().parent().remove(".popReply")
             });
-            $(".forumContent").delegate(".popReply .replySubmit .submitButton","click",function () {
-                var content = "{[" + $(".replyTheme").text().trim() + "]}" + "{br}" +$("textarea[name='replyContent']").val();
+            $(".forumContent").delegate(".popReply .replySubmit .submitButton", "click", function () {
+                var content = "{[" + $(".replyTheme").text().trim() + "]}" + "{br}" + $("textarea[name='replyContent']").val();
                 $("textarea[name='replyContent']").val(content);
                 $("input[name='forumThemeByReply']").val($("input[name='forumTheme']").val());
                 $("input[name='currentPageByReply']").val($("input[name='currentPage']").val());
@@ -93,7 +99,7 @@
             <div class="contentInputArea">
                 <c:if test="${!empty sessionScope.userName}">
                     <div class="contentNotNoneInputArea">
-                        <textarea name="contentArea" id="contentArea" ></textarea>
+                        <textarea name="contentArea" id="contentArea"></textarea>
                     </div>
                 </c:if>
                 <c:if test="${empty sessionScope.userName}">
@@ -107,8 +113,8 @@
             <input type="hidden" id="forumThemeID" name="forumThemeID" value="#">
         </div>
         <div class="submitArea">
-            <input type="hidden" id = "forumTheme" name = "forumTheme" value="${ForumContent[0].forumThemeId}">
-            <input type="hidden" id = "currentPage" name = "currentPage" value="${currentPageNumber}">
+            <input type="hidden" id="forumTheme" name="forumTheme" value="${ForumContent[0].forumThemeId}">
+            <input type="hidden" id="currentPage" name="currentPage" value="${currentPageNumber}">
             <input type="submit" class="inputBottom" value="回复"/>
         </div>
     </form>

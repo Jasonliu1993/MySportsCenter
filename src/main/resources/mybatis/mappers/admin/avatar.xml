@@ -9,18 +9,21 @@
     <select id="getCountAvatarByUser" parameterType="String" resultType="int">
         SELECT COUNT(*) FROM AVATAR WHERE REF_KEY_USER = #{UserId}
     </select>
+    <select id="getAvatarPathById" parameterType="String" resultType="String">
+        SELECT AVATAR_PATH FROM AVATAR WHERE REF_KEY_USER = #{UserId}
+    </select>
     <insert id="saveAvatarById" parameterType="com.mysportscenter.potal.entity.Avatar">
         INSERT INTO AVATAR VALUES(#{id}, #{version}, #{avatarPath}, #{createDatetime}, #{refKeyUser}, #{custom1}, #{custom2}, #{custom3}, #{custom4}, #{custom5})
     </insert>
     <update id="updateAvatarById" parameterType="com.mysportscenter.potal.entity.Avatar">
-        UPDATE AVATAR SET VERSION = #{version};
-                AVATAR_PATH = #{avatarPath}
-                CREATE_DATETIME = #{createDatetime}
-                REF_KEY_USER = #{refKeyUser}
-                CUSTOM1 = #{custom1}
-                CUSTOM2 = #{custom2}
-                CUSTOM3 = #{custom3}
-                CUSTOM4 = #{custom4}
+        UPDATE AVATAR SET VERSION = #{version},
+                AVATAR_PATH = #{avatarPath},
+                CREATE_DATETIME = #{createDatetime},
+                REF_KEY_USER = #{refKeyUser},
+                CUSTOM1 = #{custom1},
+                CUSTOM2 = #{custom2},
+                CUSTOM3 = #{custom3},
+                CUSTOM4 = #{custom4},
                 CUSTOM5 = #{custom5}
                 WHERE ID = #{id}
     </update>

@@ -5,27 +5,46 @@
     box-sizing: border-box;
     background-color: #d5d5d5;
 }
+
 .mainList {
     width: 1000px;
     margin: 0 auto;
     list-style: none;
 }
+
 .mainList li {
     width: 1000px;
     height: 250px;
 }
+
 .mainList li span {
     display: inline-block;
 }
+
 .mainList li .info {
     width: 200px;
     height: 250px;
+    text-align: center;
     float: left;
     border: 1px solid white;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+.mainList li .info img {
+    width: 160px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+.mainList li .info .infoName {
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+    text-align: center;
+}
+
 .mainList li .forumContent {
     float: right;
     width: 790px;
@@ -35,12 +54,14 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 .mainList li .forumContent .ForumContentComments {
     width: 730px;
     height: 30px;
     line-height: 30px;
     text-align: right;
 }
+
 .mainList li .forumContent .mainForumContent {
     width: 730px;
     height: 140px;
@@ -51,23 +72,27 @@
     font-size: 14px;
     line-height: 24px;
 }
+
 .mainList li .forumContent .replyForum {
     width: 730px;
     height: 30px;
     margin: 5px auto;
 }
+
 .inputArea {
     width: 1000px;
     height: 300px;
     margin: 20px auto;
     border: 1px solid white;
 }
+
 .mainList li .forumContent .replyForum .datetime {
     float: left;
     width: 200px;
     height: 30px;
     line-height: 30px;
 }
+
 .mainList li .forumContent .replyForum .reply {
     float: right;
     width: 100px;
@@ -75,13 +100,14 @@
     line-height: 30px;
     text-decoration: none;
 }
+
 .inputArea .contentArea {
     width: 800px;
     height: 200px;
     margin: 25px auto;
 }
 
-.inputArea .contentArea .contentLabelArea{
+.inputArea .contentArea .contentLabelArea {
     width: 800px;
     height: 15px;
     line-height: 15px;
@@ -99,11 +125,13 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.inputArea .contentArea .contentInputArea .contentNotNoneInputArea{
+
+.inputArea .contentArea .contentInputArea .contentNotNoneInputArea {
     width: 100%;
     height: 100%;
 }
-.inputArea .contentArea .contentInputArea #contentArea{
+
+.inputArea .contentArea .contentInputArea #contentArea {
     width: 100%;
     height: 100%;
     resize: none;
@@ -122,6 +150,7 @@
     padding-left: 133px;
     padding-top: 7px;
 }
+
 .submitArea input[type = "submit"] {
     height: 30px;
     width: 50px;

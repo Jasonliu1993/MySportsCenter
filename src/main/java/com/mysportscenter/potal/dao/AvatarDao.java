@@ -12,4 +12,5 @@ public interface AvatarDao {
     int getCountAvatarByUser (String UserId);
     void saveAvatarById (Avatar avatar);
     void updateAvatarById (Avatar avatar);
+    String getAvatarPathById (String UserId);
 }

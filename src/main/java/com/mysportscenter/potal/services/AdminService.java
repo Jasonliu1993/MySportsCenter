@@ -38,14 +38,16 @@ public class AdminService {
     public void saveAvatar(MultipartFile file, HttpSession httpSession, HttpServletRequest httpServletRequest) {
         System.out.println("开始");
 
+            String path = httpServletRequest.getSession().getServletContext().getRealPath("uploadFiles");
+//            String path = "/opt/apache-tomcat-8.5.15/webapps/MySportsCenter/uploadFiles/HP1H4wgn59J.jpg";
+        System.out.println("++++++" + (path.lastIndexOf("MySportsCenter") + 14) + "+++++++++++");
+        System.out.println("++++++" + path.substring(path.lastIndexOf("MySportsCenter") + 14,path.length()) + "+++++++++++");
         if (avatarDao.getCountAvatarByUser((String)httpSession.getAttribute("userName")) == 0) {
-//            String path = httpServletRequest.getSession().getServletContext().getRealPath("uploadFiles");
-            String path = "/Users/Jason/Desktop";
             String key = KeyValue.getKeyValue();
             Avatar avatar = new Avatar();
             avatar.setId(key);
             avatar.setVersion(1);
-            avatar.setAvatarPath(path + "/" + key + ".jpg");
+            avatar.setAvatarPath(path.substring(path.lastIndexOf("MySportsCenter") + 14,path.length()) + "/" + key + ".jpg");
             avatar.setCreateDatetime(DateUtility.getCurrentDate());
             avatar.setRefKeyUser((String)httpSession.getAttribute("userName"));
             System.out.println(path + "/" + key + ".jpg");
@@ -59,10 +61,9 @@ public class AdminService {
             }
 
         } else {
-            String path = "/Users/Jason/Desktop";
             HandleFile.deleteFile(avatarDao.getAvatarByUser((String)httpSession.getAttribute("userName")).getAvatarPath());
             Avatar avatar = avatarDao.getAvatarByUser((String)httpSession.getAttribute("userName"));
-            avatar.setAvatarPath(path + "/" + avatar.getId() + ".jpg");
+            avatar.setAvatarPath(path.substring(path.lastIndexOf("MySportsCenter") + 14,path.length()) + "/" + avatar.getId() + ".jpg");
             avatar.setCreateDatetime(DateUtility.getCurrentDate());
             File targetFile = HandleFile.createFile(path, avatar.getId() + ".jpg");
             //保存
@@ -93,5 +94,9 @@ public class AdminService {
         }
 
         return stringListMap;
+    }
+
+    public String getAvatarById (String userId) {
+        return avatarDao.getAvatarPathById(userId);
     }
 }

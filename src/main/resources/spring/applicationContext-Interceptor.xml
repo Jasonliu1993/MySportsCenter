@@ -20,6 +20,7 @@
                         <value>sendNewForum.do</value>
                         <value>sendNewForumContenr.do</value>
                         <value>sendNewForumContenrByReply.do</value>
+                        <value>avatar.do</value>
                     </list>
                 </property>
             </bean>

@@ -1,5 +1,6 @@
 package com.mysportscenter.potal.services;
 
+import com.mysportscenter.potal.dao.AvatarDao;
 import com.mysportscenter.potal.dao.ForumDao;
 import com.mysportscenter.potal.entity.ForumContent;
 import com.mysportscenter.potal.entity.ForumTheme;
@@ -20,6 +21,9 @@ import javax.servlet.http.HttpSession;
 public class ForumService {
     @Resource
     ForumDao forumDao;
+
+    @Resource
+    AvatarDao avatarDao;
 
     public List<ForumTheme> getAllForumTheme() {
         List<ForumTheme> list = new LinkedList<ForumTheme>();
@@ -99,7 +103,11 @@ public class ForumService {
     }
 
     public List<ForumContent> getForumContentByThemeId(String id, int currentPageNumber) {
-        return forumDao.getForumContentByThemeId(id,(currentPageNumber - 1) * 10);
+        List<ForumContent> forumContents = forumDao.getForumContentByThemeId(id,(currentPageNumber - 1) * 10);
+        for (ForumContent forumContent : forumContents) {
+            forumContent.setCustom1(avatarDao.getAvatarPathById(forumContent.getCreateUser()));
+        }
+        return forumContents;
     }
 
     public int getCountForumThemeByPilot() {
