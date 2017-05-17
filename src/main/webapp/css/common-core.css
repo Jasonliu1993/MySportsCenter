@@ -24,6 +24,10 @@ a:visited {
     color: #ca0022;
 }
 
+.titleUl {
+    display: none;
+}
+
 .fixedmenu {
     width: 100%;
     height: 30px;
@@ -41,10 +45,9 @@ a:visited {
 }
 
 .fixedmenu .fixedmenuArea .static {
-    width: 200px;
     height: 30px;
     line-height: 30px;
-    margin-left: 50px;
+    margin-left: 10px;
     color: white;
     display: inline-block;
     float: left;

@@ -16,7 +16,26 @@
         <c:if test="${!empty sessionScope.userName}">
             <span class="static">${sessionScope.userName},欢迎回来!</span>
             <%--<span class="LoginButton"><a href="/login/login.jsp">登录</a></span>--%>
-            <span class="static"><a href="/admin/avatar.do">我的空间</a></span>
+            <span class="static">
+                <a href="#" class="MySpace">我的空间</a>
+                <ul class="titleUl">
+                    <li class="titleList"><a href="/admin/avatar.do">头像上传</a></li>
+                    <li class="titleList"><a href="#">个人信息</a></li>
+                    <li class="titleList"><a href="#">密码修改</a></li>
+                </ul>
+                <script>
+                    $(document).ready(function () {
+                        $(".MySpace").hover(function () {
+                            var hoverUl = $(this).next("ul");
+                            if (hoverUl.is(":hidden")) {
+                                hoverUl.slideDown();
+                            } else {
+                                hoverUl.slideUp();
+                            }
+                        })
+                    })
+                </script>
+            </span>
         </c:if>
     </div>
 </div>
